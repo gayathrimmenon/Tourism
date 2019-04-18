@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+   <style>
+body {
+  font-family: Arial;
+  color: white;
+}
+ html,body {
+    height:100%;
+    width:100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background:url("scenery.jpg");
+}
+
+.right {
+  right: 0;
+  background:url("paris.jpg");
+  height: 100%;           
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+.btn {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.btn:hover {opacity: 0.6}
+</style>
+</head>
+<body>
+<h1 class="centered"> <u>GnT Travels</u></h1>
+    
+<div class="split left">
+  <div class="centered">
+      <form action="booking.html">
+          <button class="btn">Domestic</button>
+    <h2>Check on the Domestic trips we offer.</h2>
+    
+      </form>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    
+   <form action="inter.html">
+          <button class="btn">International</button>
+    <h2>Enjoy the exquisite international trips with exciting offer.</h2>
+    
+      </form>
+  </div>
+</div>
+        
+    </body>
+</html>

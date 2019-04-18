@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+            .color
+            {
+                background:url("texture3.jpeg");
+            }
+            .button
+            {
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                border-radius: 15px;
+            }
+            .button1:hover
+            {
+                border-radius: 15px;
+                width:150px;
+                height:90px;
+                background-color: lightgrey;
+                color: #990033;
+            }
+        </style>
+    </head>
+    <body class="color">
+       
+        
+        <form action="user_one" method="POST">
+            <input type="submit" class="button button1" value="User Details" formtarget="f2" vspace="10">
+        </form>
+        
+        <form action="booking_one" method="POST">
+            <input type="submit" class="button button1" value="Domestic tickets" formtarget="f2" vspace="10"> 
+        </form>
+        
+        <form action="inter_one" method="POST">
+            <input type="submit" class="button button1" value="International booked tickets" formtarget="f2" vspace="10"> 
+        </form>
+    </body>
+</html>

@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <style>
+       
+        
+        body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  html,body 
+  {
+    height:100%;
+    width:100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ .bg
+    {
+                    height: 100%; 
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+    }
+
+  .jumbotron {
+    background-image: url("mysea.jpg");
+    width:100%;
+    height:750px;
+     background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+   
+  }
+  .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: harrington;
+  border: 7px solid #f1f1f1;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+  padding: 5px;
+  text-align: center;
+  
+}
+.bg-tex {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+  
+  border: 7px solid #f1f1f1;
+  position: absolute;
+  top: 128%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 550px;
+  padding: 5px;
+  
+  
+  
+}
+.bg-tx {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+  
+  border: 7px solid #f1f1f1;
+  position: absolute;
+  top: 198%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 550px;
+  padding: 5px;
+  
+  
+  
+}
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.bt{
+   
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+
+/* Green */
+.domestic {
+  border-color: #4CAF50;
+  color: green;
+}
+.domestic:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.img1 {
+    width:10%;
+    height:55%;
+    top:25%;
+  border-radius: 50%;
+}
+.cont{
+    padding-left:40px;
+    color: black;
+  font-weight: bold;
+  font-size: 13px;
+  
+}
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover 
+  {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+     background-color: rgba(0,0,0, 0.3); 
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar
+  {
+    background-color: rgba(0,0,0, 0.4); 
+    margin-bottom: 0;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand 
+  {
+    background-color: rgba(0,0,0, 0.4); 
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a 
+  {
+   background-color: rgba(0,0,0, 0.4);
+    background-color: #f4511e !important;
+  }
+  .navbar-default .navbar-toggle 
+  {
+    border-color: transparent;
+     background-color: rgba(0,0,0, 0.4);
+    color: #f4511e !important;
+  }
+  footer .glyphicon 
+  {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  
+  
+
+  .mySlides 
+  {
+    width:1900px;
+    height:550px;
+    
+    background-size: cover;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px)
+  {
+    .col-sm-4 
+    {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg 
+    {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) 
+  {
+    .logo 
+    {
+      font-size: 150px;
+    }
+  }
+  * {
+  box-sizing: border-box;
+}
+
+.container2 {
+  position: relative;
+  max-width: 1000px;
+  height: 25%;
+  top:15%;
+  right:32%;
+  left: 2%;
+  
+  margin: 0 auto;
+}
+
+.container2 img {vertical-align: middle;}
+
+.container2 .content 
+{
+  position: absolute;
+  top:18%;
+  
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 111px;
+}
+.open-button {
+  background-color: #f4511e;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: absolute;
+  top:250px;
+  left:60px;
+  right: 15px;
+  width: 280px;
+}
+.open-button1 {
+  background-color: #f4511e;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: absolute;
+  top:350px;
+  left:170px;
+  right: 15px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+        
+        
+        </style>
+    
+    
+    </head>
+    
+    <body>
+        
+
+    <div class="jumbotron">
+ <div class="container2">
+     <form action="signup.html">
+  <div class="content">
+      <h1 style="font-family: monospace;padding-left: 200px"><u>Book Now</u></h1>
+    <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+   <label>From</label>
+          <input class="w3-input w3-border" type="text" placeholder="Departing from">
+        </div>
+        <div class="w3-half">
+          <label>To</label>
+          <input class="w3-input w3-border" type="text" placeholder="Arriving at">
+        </div>
+</div>
+    
+    <button class="open-button1" >SIGN UP</button>
+    
+  </div>
+     
+  </div>
+
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+        <form action="getinTouch.html">
+            <style>
+                 img:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+</style>
+
+    </div>
+        
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <input type="submit" class="btn btn-default btn-lg" value="GET IN TOUCH">
+         
+    <div class="col-sm-4">
+        
+
+
+
+    </div>
+  
+
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission is to provide most omforting and great refreshing services to our customers who visits our site.</h4><br>
+      <p><strong>VISION:</strong> Our vision is to give more and more important services to the clients and also to accomplish their suggestions which we can redeem.
+      to tie up with more hotels and provide our client the best service possible through it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="  fas fa-hotel logo-small"></span>
+      <h4>HOTEL</h4>
+      <p>3-star and 5-star hotels as per the requirement.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" fas fa-plane logo-small"></span>
+      <h4>AIRLINE</h4>
+      <p>Best flight packages</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fas fa-train logo-small"></span>
+      <h4>TRAINS</h4>
+      <p>Train bookings are done.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class=" fas fa-gift logo-small"></span>
+      <h4>PACKAGES</h4>
+      <p>Reasonable and exciting packages.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" 	fas fa-hands-helping logo-small"></span>
+      <h4>GUIDE</h4>
+      <p>Appropriate guide services.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fab fa-cc-visa logo-small"></span>
+      <h4>VISA</h4>
+      <p>Visa renewal.</p>
+    </div>
+  </div>
+
+<br><br>
+<div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="  	fas fa-map-marked-alt logo-small"></span>
+      <h4>Routes</h4>
+      <p>Information about the routes to travel.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" fas fa-credit-card logo-small"></span>
+      <h4>PAYMENTS</h4>
+      <p>Easy payments.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fab fa-cc-visa logo-small"></span>
+      <h4>VISA</h4>
+      <p>Visa renewal</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Trip Section -->
+
+<div id="trip" class="container-fluid text-center bg-grey">
+    <h2 class="text-center"> Trips</h2>
+    <button class="btn domestic">
+        DOMESTIC
+    </button>
+</div>
+<!-- Container (Portfolio Section) -->
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+    <h2 class="text-center">Portfolio</h2>
+<h4>Our Trips</h4>
+ <div class="w3-content w3-section" >
+        <img class="mySlides" src="am.jpeg" >
+        <img class="mySlides" src="ameri.jpeg" >
+        <img class="mySlides" src="america.jpeg" >
+        <img class="mySlides" src="sea.jjpg" >
+       
+    </div>
+</div>
+  <br>
+  
+  <h2 class=" container-fluid text-center">What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"GnT offers the  best services. I am so happy with the trip!"<br><span>Michael Rose, Germany</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, UK</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Glad i chose GnT...got a good experience"<br><span>Shyam Naik, Artist, India</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9897969599</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> my_email@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="taj.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  
+</footer>
+
+<script>
+    var myIndex = 0;
+        carousel();
+
+        function carousel() 
+        {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) 
+          {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) 
+          {
+              myIndex = 1
+          }    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 2000); 
+          
+        }
+$(document).ready(function()
+{
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) 
+  {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() 
+  {
+    $(".slideanim").each(function()
+    {
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600)
+        {
+          $(this).addClass("slide");
+        }
+    }
+            );
+  }
+          );
+})
+
+</script>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <input type="submit" class="btn btn-default btn-lg" value="GET IN TOUCH">
+         
+    <div class="col-sm-4">
+        
+
+
+
+    </div>
+  
+
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission is to provide most omforting and great refreshing services to our customers who visits our site.</h4><br>
+      <p><strong>VISION:</strong> Our vision is to give more and more important services to the clients and also to accomplish their suggestions which we can redeem.
+      to tie up with more hotels and provide our client the best service possible through it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="  fas fa-hotel logo-small"></span>
+      <h4>HOTEL</h4>
+      <p>3-star and 5-star hotels as per the requirement.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" fas fa-plane logo-small"></span>
+      <h4>AIRLINE</h4>
+      <p>Best flight packages</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fas fa-train logo-small"></span>
+      <h4>TRAINS</h4>
+      <p>Train bookings are done.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class=" fas fa-gift logo-small"></span>
+      <h4>PACKAGES</h4>
+      <p>Reasonable and exciting packages.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" 	fas fa-hands-helping logo-small"></span>
+      <h4>GUIDE</h4>
+      <p>Appropriate guide services.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fab fa-cc-visa logo-small"></span>
+      <h4>VISA</h4>
+      <p>Visa renewal.</p>
+    </div>
+  </div>
+
+<br><br>
+<div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="  	fas fa-map-marked-alt logo-small"></span>
+      <h4>Routes</h4>
+      <p>Information about the routes to travel.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" fas fa-credit-card logo-small"></span>
+      <h4>PAYMENTS</h4>
+      <p>Easy payments.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fab fa-cc-visa logo-small"></span>
+      <h4>VISA</h4>
+      <p>Visa renewal</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Trip Section -->
+
+<div id="trip" class="container-fluid text-center bg-grey">
+    <h2 class="text-center"> Trips</h2>
+    <button class="btn domestic">
+        DOMESTIC
+    </button>
+</div>
+<!-- Container (Portfolio Section) -->
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+    <h2 class="text-center">Portfolio</h2>
+<h4>Our Trips</h4>
+ <div class="w3-content w3-section" >
+        <img class="mySlides" src="am.jpeg" >
+        <img class="mySlides" src="ameri.jpeg" >
+        <img class="mySlides" src="america.jpeg" >
+        <img class="mySlides" src="sea.jjpg" >
+       
+    </div>
+</div>
+  <br>
+  
+  <h2 class=" container-fluid text-center">What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"GnT offers the  best services. I am so happy with the trip!"<br><span>Michael Rose, Germany</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, UK</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Glad i chose GnT...got a good experience"<br><span>Shyam Naik, Artist, India</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9897969599</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> my_email@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="taj.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  
+</footer>
+
+<script>
+    var myIndex = 0;
+        carousel();
+
+        function carousel() 
+        {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) 
+          {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) 
+          {
+              myIndex = 1
+          }    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 2000); 
+          
+        }
+$(document).ready(function()
+{
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) 
+  {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() 
+  {
+    $(".slideanim").each(function()
+    {
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600)
+        {
+          $(this).addClass("slide");
+        }
+    }
+            );
+  }
+          );
+})
+
+</script>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <input type="submit" class="btn btn-default btn-lg" value="GET IN TOUCH">
+         
+    <div class="col-sm-4">
+        
+
+
+
+    </div>
+  
+
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission is to provide most omforting and great refreshing services to our customers who visits our site.</h4><br>
+      <p><strong>VISION:</strong> Our vision is to give more and more important services to the clients and also to accomplish their suggestions which we can redeem.
+      to tie up with more hotels and provide our client the best service possible through it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="  fas fa-hotel logo-small"></span>
+      <h4>HOTEL</h4>
+      <p>3-star and 5-star hotels as per the requirement.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" fas fa-plane logo-small"></span>
+      <h4>AIRLINE</h4>
+      <p>Best flight packages</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fas fa-train logo-small"></span>
+      <h4>TRAINS</h4>
+      <p>Train bookings are done.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class=" fas fa-gift logo-small"></span>
+      <h4>PACKAGES</h4>
+      <p>Reasonable and exciting packages.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" 	fas fa-hands-helping logo-small"></span>
+      <h4>GUIDE</h4>
+      <p>Appropriate guide services.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fab fa-cc-visa logo-small"></span>
+      <h4>VISA</h4>
+      <p>Visa renewal.</p>
+    </div>
+  </div>
+
+<br><br>
+<div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="  	fas fa-map-marked-alt logo-small"></span>
+      <h4>Routes</h4>
+      <p>Information about the routes to travel.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class=" fas fa-credit-card logo-small"></span>
+      <h4>PAYMENTS</h4>
+      <p>Easy payments.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fab fa-cc-visa logo-small"></span>
+      <h4>VISA</h4>
+      <p>Visa renewal</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Trip Section -->
+
+<div id="trip" class="container-fluid text-center bg-grey">
+    <h2 class="text-center"> Trips</h2>
+    <button class="btn domestic">
+        DOMESTIC
+    </button>
+</div>
+<!-- Container (Portfolio Section) -->
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+    <h2 class="text-center">Portfolio</h2>
+<h4>Our Trips</h4>
+ <div class="w3-content w3-section" >
+        <img class="mySlides" src="am.jpeg" >
+        <img class="mySlides" src="ameri.jpeg" >
+        <img class="mySlides" src="america.jpeg" >
+        <img class="mySlides" src="sea.jjpg" >
+       
+    </div>
+</div>
+  <br>
+  
+  <h2 class=" container-fluid text-center">What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"GnT offers the  best services. I am so happy with the trip!"<br><span>Michael Rose, Germany</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, UK</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Glad i chose GnT...got a good experience"<br><span>Shyam Naik, Artist, India</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9897969599</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> my_email@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="taj.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  
+</footer>
+
+<script>
+    var myIndex = 0;
+        carousel();
+
+        function carousel() 
+        {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) 
+          {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) 
+          {
+              myIndex = 1
+          }    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 2000); 
+          
+        }
+$(document).ready(function()
+{
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) 
+  {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() 
+  {
+    $(".slideanim").each(function()
+    {
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600)
+        {
+          $(this).addClass("slide");
+        }
+    }
+            );
+  }
+          );
+})
+
+</script>   
+        
+        
+        
+        
+        
+    </body>
+</html>

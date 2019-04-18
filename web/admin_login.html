@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+* {
+  box-sizing: border-box;
+}
+
+.container2 {
+  position: relative;
+  max-width: 800px;
+  margin-top:10%;
+  right:30%;
+  width:300%;
+  margin: 0 auto;
+}
+
+.container2 img {vertical-align: middle;}
+
+.container2 .content 
+{
+  position: absolute;
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 250%;
+  height: 700px;
+  padding: 70px;
+  text-align: left;
+}
+ .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 0 solid #f1f1f1;
+  position: absolute;
+  top: 40%;
+  left: 75%;
+  transform: translate(-50%, -38%);
+  z-index: 2;
+  width: 55%;
+  
+  text-align:left;
+}
+
+    
+
+  body, html
+  {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+.bg
+            {
+                height: 100%; 
+            
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            input,textarea
+            {
+                background: rgba(255,255,255,0.4);
+                margin:none auto;
+                padding: 10px;
+            }
+
+      </style>
+    </head>
+    <body class="bg" background="sea.jpg">
+         <div class="container2" >   
+         <form method="POST" name="Registration"  onsubmit="return(validate())" action="adminlogin_table" >
+         <br><br><br><br><br><br><br><br>
+            <div class="content"><br><br><br><br>
+                <img src="bg3.jpg">
+                    <div class="bg-text">
+                        <h1 style="font-family: monospace"><u>GnT Travels</u></h1>
+                       <h1 style="font-family: monospace"><u>Admin Login</u></h1>
+                       
+                      
+                        LOGIN ID:                           :<input type="text" name="id"><br><br>
+                        PASSWORD                            :<input type="password" name="password"><br><br>
+                  
+                <input type="SUBMIT" class="button" value="Login" name="Login"  >
+                <input type="SUBMIT" class="button" value="Next" name="check">
+                      
+          </div>
+                    </div><br><br><br>
+             </form>
+             <br><br><br>
+        </div>
+        
+
+
+    </body>
+</html>

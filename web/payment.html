@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">                
+  
+ <style>
+         .mapouter
+         {  
+             position:relative;
+             text-align:right;
+             left:1px;
+             bottom: 25%;
+             right:30%;
+             height:500px;
+             width:600px;
+         }
+         .gmap_canvas
+         {
+             overflow:hidden;
+             background:none!important;
+             height:500px;
+             width:600px;
+         }
+       
+
+
+h1 {
+    font-size: 35px;
+    left:60px;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+ 
+.p1{
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: arial;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color:#ff6600;
+  }
+  .p2{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color:#ff6600;
+    font-stretch: semi-expanded;
+  }
+  p{
+      font-size:30px;
+      font-family:monospace;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0,0,0, 0.4);
+}
+
+.navbar a {
+  float: left;
+  top:10%;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+.navbar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+}
+.navbar-right {
+  float: right;
+  font-family: monospace;
+  font-size: 25px;
+}
+ 
+.dropdown {
+  float: right;
+  font-size: 20%;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.dropdown .dropbtn {
+ 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color:  #ff471a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ html,body {
+    height:100%;
+    width:100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ .bg
+            {
+                height: 100%; 
+         
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+  .jumbotron {
+    
+   
+    font-family: Montserrat, sans-serif;
+   
+  }
+
+  .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: harrington;
+  border: 7px solid #f1f1f1;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+  padding: 5px;
+  text-align: center;
+  
+}
+.bg-tx {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: harrington;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 20%;
+  padding: 5px;
+  text-align: center;
+  
+}
+* {
+  box-sizing: border-box;
+}
+
+.container2 {
+  position: absolute;
+  width: 600px;
+  height: 50%;
+  top:15%;
+  right:200%;
+  left: -1%;
+  
+  margin: 0 auto;
+}
+
+.container2 img {vertical-align: middle;}
+
+.container2 .content 
+{
+  position: absolute;
+  top:16%;
+  
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 500%;
+  padding: 111px;
+}
+.div2{
+    float:left;
+    text-align: left;
+}
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text],option {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+ </style>
+      
+    </head>
+<body background="bg3.jpg" class="bg">
+
+<div class="navbar">
+     <a href="#default" class="logo">GnT Travels</a>
+     
+    <div class="navbar-right">
+        <a href="home.html"> <i class='fas fa-home' style='font-size:38px;'></i></a>&nbsp;&nbsp;&nbsp;
+  <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
+  <a href="Cost.html">Cost Estimation</a>
+    <div class="dropdown">
+    <button class="dropbtn">
+      <i class='fas fa-gift' style='font-size:34px'></i>Packages 
+    </button>
+    <div class="dropdown-content">
+      <a href="booking.html">Domestic</a>
+      <a href="checkin.html">International</a>
+     
+    </div>
+  </div> 
+    <a href="LogoutServlet1">Logout</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="u_id">u_id</label>
+                <input type="text" id="zip" name="u_id" placeholder="10001">
+              </div>           
+            
+              <div class="col-50">
+                  <h3>Package</h3>
+                <label for="package">Package selected</label>
+                <select id="place">
+                    <option></option>
+                     <option value="1">Kerala</option>
+                    <option value="2">Kashmir</option>
+                    <option value="3">Goa</option>
+                    <option value="4">Gujarat</option>
+                    <option value="5">Manali</option>
+                    <option value="6">Delhi</option>
+                    <option value="7">Ooty</option>
+                    <option value="8">Mysore</option>
+                    <option value="9">Punjab</option>
+                    <option value="10">Italy</option>
+                    <option value="11">Bali</option>
+                    <option value="12">London</option>
+                    <option value="13">Australia</option>
+                    <option value="14">Nepal</option>
+                    <option value="15">Malayasia</option>
+                    <option value="16">America</option>
+                    <option value="17">Paris</option>
+                    <option value="18">Thailand</option>
+                    
+                </select>
+              </div>
+              <div class="col-50">
+                <label>Travel Mode</label>
+                <select id="travel">
+                    <option></option>
+                    <option value="flight">Flight</option>
+                    <option value="train">Train</option>
+                </select>
+              </div>
+                 <div class="col-50">
+                <label >No of persons</label>
+                <input type="text" id="no" name="no" placeholder="0">
+              </div>    
+            
+          <div class="col-50">
+                <label>Flight From:</label>
+                <select id="flightfrom">
+                    <option></option>
+                   <option value="1">Kerala</option>
+                    <option value="2">Mumbai</option>
+                    <option value="3">Delhi</option>
+                    <option value="4">Chennait</option>
+                    <option value="5">Banglore</option>
+                    <option value="6">NYC</option>
+                    <option value="7">Amsterdam</option>
+                    <option value="8">London</option>
+                   
+                </select>
+              </div>
+           <div class="col-50">
+                <label>Flight to:</label>
+                <select id="flightto">
+                    <option></option>
+                   <option value="1">Kerala</option>
+                    <option value="2">Kashmir</option>
+                    <option value="3">Goa</option>
+                    <option value="4">Gujarat</option>
+                    <option value="5">Manali</option>
+                    <option value="6">Delhi</option>
+                    <option value="7">Ooty</option>
+                    <option value="8">Mysore</option>
+                    <option value="9">Punjab</option>
+                    <option value="10">Italy</option>
+                    <option value="11">Bali</option>
+                    <option value="12">London</option>
+                    <option value="13">Australia</option>
+                    <option value="14">Nepal</option>
+                    <option value="15">Malaysia</option>
+                    <option value="16">America</option>
+                    <option value="17">Paris</option>
+                    <option value="18">Thailand</option>
+                </select>
+              </div>
+                 
+                <div class="col-50">
+                <label>Train From:</label>
+                <select id="trainfrom">
+                    <option></option>
+                   <option value="1">Kerala</option>
+                    <option value="2">Mumbai</option>
+                    <option value="3">Delhi</option>
+                    <option value="4">Chennait</option>
+                    <option value="5">Banglore</option>
+                    <option value="6">Gujarat</option>
+                    <option value="7">Pune</option>
+                    <option value="8">Kolkata</option>
+                   
+                </select>
+              </div>
+                
+                 <div class="col-50">
+                <label>Train to:</label>
+                <select id="trainto">
+                    <option></option>
+                   <option value="1">Kerala</option>
+                    <option value="2">Kashmir</option>
+                    <option value="3">Goa</option>
+                    <option value="4">Gujarat</option>
+                    <option value="5">Manali</option>
+                    <option value="6">Delhi</option>
+                    <option value="7">Ooty</option>
+                    <option value="8">Mysore</option>
+                    
+                   
+                </select>
+              </div>
+                
+            </div>
+          </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+                <div class="col-50">
+                <label >Total Amount:</label>
+                <input type="text" id="amt" name="amt" >
+              </div>
+            </div>
+          </div>
+          
+ </div>
+          <input id="est2" type="reset" value="Reset"  />
+       <input id="est" type="button" value="Estimate" onclick="calculator()" />
+        <input type="submit" value="Continue to Pay" class="btn">
+      </form>
+    </div>
+  </div>
+</script>
+  <script>
+function calculator() {
+  
+ var kerala=10000;
+ var kashmir=20000;
+ var goa=10000;
+ var gujarat=11000;
+ var manali=22000;
+ var punjab=15000;
+ var delhi=17000;
+ var ootty=7000;
+ var mysore=9000;
+ var america=130000;
+ var australia=110000;
+ var bali=110000;
+ var thailand=95000;
+ var paris=11000;
+ var nepal=50000;
+ var malaysia=100000;
+ var london=130000;
+ var italy=135000;
+  var result;
+  var n=document.getElementById("no").value;
+  var calc = document.getElementById("place").value;
+  var tr=document.getElementById("travel").value;
+  var flight1 = document.getElementById("flightto").value;
+  var flight2=document.getElementById("flightfrom").value;
+  var train1=document.getElementById("trainto").value;
+  var train2=document.getElementById("trainfrom").value;
+  switch(calc)
+  {
+            case"1" : result = kerala; 
+        break;
+            case"2" : result = kashmir; 
+        break;
+            case"3" : result = goa; 
+        break;
+         case"4" : result = gujarat; 
+        break;
+         case"5" : result = manali; 
+        break;
+         case"6" : result = delhi; 
+        break;
+         case"7" : result = ootty; 
+        break;
+        case"8" : result = punjab; 
+        break;
+        case"9" : result = punjab; 
+        break;
+         case"10" : result = italy; 
+        break;
+         case"11" : result = bali; 
+        break;
+        case"12" : result = london; 
+        break;
+         case"13" : result = australia; 
+        break;
+         case"14" : result = nepal; 
+        break;
+        case"15" : result = malaysia; 
+        break;
+         case"16" : result = america; 
+        break;
+         case"17" : result = paris; 
+        break;
+        case"18" : result = thailand; 
+        break;
+        
+}
+
+ switch(tr)
+  {
+            case"flight" :
+                switch(flight1)
+                {
+                     case"1" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+5000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                         break;
+                  
+                     case"2" :
+                     switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                      break;
+                        case"3":
+                        switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"4" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"5" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"6" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"7" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"8" : 
+                        switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"9" : 
+                        switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"10" : switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"11" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"12" : 
+                        switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"13" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"14" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"15" : 
+                        switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"16" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"17" : 
+                         switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"18" :
+                        switch(flight2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                          document.getElementById("amt").value=result;
+                         
+                    }
+                       case"train" : 
+                           switch(train1)
+                           {
+                               
+                          case"1": 
+                         switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                  
+                     case"2" :
+                     switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     
+                        case"3":
+                        switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"4" : 
+                         switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"5" : 
+                         switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"6" : switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                     case"7" : 
+                     switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"8" : 
+                        switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                    case"9" : 
+                        switch(train2)
+                         {
+                             case"1":result=result+5000;
+                             break;
+                             case"2":result=result+7000;
+                             break;
+                             case"3":result=result+4000;
+                             break;
+                             case"4":result=result+6000;
+                             break;
+                             case"5":result=result+9000;
+                             break;
+                             case"6":result=result+50000;
+                             break;
+                             case"7":result=result+45000;
+                             break;
+                             case"8":result=result+99000;
+                             break;
+                             
+                         }
+                          break;
+                   }
+                    break;
+                        
+                  
+}
+result=result*n;
+document.getElementById("amt").value=result;
+}
+</script>
+    </body>
+</html>

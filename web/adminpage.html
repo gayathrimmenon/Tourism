@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+            .color
+            {
+                background-color:#990033;
+            }
+            .button
+            {
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                border-radius: 15px;
+            }
+            .button1:hover
+            {
+                border-radius: 15px;
+                width:100px;
+                height:90px;
+                background-color: lightgrey;
+                color: #990033;
+            }
+            a {
+  float: right;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+        </style>
+    </head>
+    <body class="color">
+       
+        <a class="active" href="LogoutServlet1" target="_parent"><i class="fa fa-home"></i></a> 
+        <form action="join" method="POST">
+            <input type="submit" class="button button1" value="User Details" formtarget="f2" vspace="10">
+        </form>
+        
+        <form action="guide_one" method="POST">
+            <input type="submit" class="button button1" value="Guide Details" formtarget="f2" vspace="10"> 
+        </form>
+        
+        <form action="booking_one" method="POST">
+            <input type="submit" class="button button1" value="Domestic tickets" formtarget="f2" vspace="10"> 
+        </form>
+        
+        <form action="inter_one" method="POST">
+            <input type="submit" class="button button1" value="International booked tickets" formtarget="f2" vspace="10"> 
+        </form>
+         
+        <form action="delete user.html" method="POST">
+            <input type="submit" class="button button1" value="Delete User" formtarget="f2" vspace="10"> 
+        </form>
+        
+        <form action="update.html" method="POST">
+            <input type="submit" class="button button1" value="update User" formtarget="f2" vspace="10"> 
+        </form>
+         <form action="delete_guide.html" method="POST">
+            <input type="submit" class="button button1" value="Delete Guide" formtarget="f2" vspace="10"> 
+        </form>
+        
+        <form action="update_guide.html" method="POST">
+            <input type="submit" class="button button1" value="update Guide" formtarget="f2" vspace="10"> 
+        </form>
+         
+         <form action="comments_one" method="POST">
+            <input type="submit" class="button button1" value="Comments n suggestions by Users" formtarget="f2" vspace="10"> 
+        </form>
+        
+         <form action="msg_guide.html" method="POST">
+            <input type="submit" class="button button1" value="Message to Guide" formtarget="f2" vspace="10"> 
+        </form>
+        <form action="msgfrom_guide" method="POST">
+            <input type="submit" class="button button1" value="Message from Guide" formtarget="f2" vspace="10"> 
+        </form>
+    </body>
+</html>

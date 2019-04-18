@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+                        
+  
+    
+    <style>
+        h1 {
+    font-size: 35px;
+    left:60px;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+ 
+.p1{
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: arial;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color:#ff6600;
+  }
+  .p2{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color:#ff6600;
+    font-stretch: semi-expanded;
+  }
+  p{
+      font-size:30px;
+      font-family:monospace;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0,0,0, 0.4);
+}
+
+.navbar a {
+  float: left;
+  top:10%;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+.navbar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+}
+.navbar-right {
+  float: right;
+  font-family: monospace;
+  font-size: 25px;
+}
+ 
+.dropdown {
+  float: right;
+  font-size: 20%;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.dropdown .dropbtn {
+ 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color:  #ff471a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ html,body {
+    height:100%;
+    width:100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ .bg
+            {
+                height: 100%; 
+         
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+  .jumbotron {
+    
+   
+    font-family: Montserrat, sans-serif;
+   
+  }
+
+  .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: harrington;
+  border: 7px solid #f1f1f1;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+  padding: 5px;
+  text-align: center;
+  
+}
+.bg-tx {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.5); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: harrington;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 20%;
+  padding: 5px;
+  text-align: center;
+  
+}
+* {
+  box-sizing: border-box;
+}
+
+.container2 {
+  position: absolute;
+  width: 600px;
+  height: 50%;
+  top:15%;
+  right:200%;
+  left: -1%;
+  
+  margin: 0 auto;
+}
+
+.container2 img {vertical-align: middle;}
+
+.container2 .content 
+{
+  position: absolute;
+  top:16%;
+  
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 500%;
+  padding: 111px;
+}
+.div2{
+    float:left;
+    text-align: left;
+}
+
+ </style>
+      
+    </head>
+<body background="bg3.jpg" class="bg">
+
+<div class="navbar">
+     <a href="#default" class="logo">GnT Travels</a>
+    <div class="navbar-right">
+        <a href="home.html"> <i class='fas fa-home' style='font-size:38px;'></i></a>&nbsp;&nbsp;&nbsp;
+  <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
+  <a href="Cost.thml">Cost Estimation</a>
+    <div class="dropdown">
+    <button class="dropbtn">
+      <i class='fas fa-gift' style='font-size:34px'></i>Packages 
+    </button>
+    <div class="dropdown-content">
+      <a href="booking.html">Domestic</a>
+      <a href="inter1.html">International</a>
+     
+    </div>
+  </div> 
+  </div>
+</div>
+
+
+ <div class="jumbotron" >
+ <div class="container2">
+    
+  <div class="content" id="DomesticTrips">
+      <h1 style="font-family: monospace;padding-left: 600px"><u>GnT Travels</u></h1>
+      <p style="font-family:Comic Sans MS;text-align: left;font-size:40px"><u><b>Cost Estimation</b></u></p><br><br><br>
+      <div class="div2">
+        <p class="p2" style="font-family: monospace;text-align: left;font-size: 25px;">
+          <b>Find Out the Cost that would be required <br>for your journey on your vehicle.</b>
+        </p>
+        
+      </div>
+      
+       <form>
+      <div class="bg-tx" >
+     <br>
+     <h4 style="color:white;font-size:20px;font-family:comic sans ms;">&nbsp;&nbsp;Select Your Trip &nbsp;&nbsp; : &nbsp;&nbsp; <select id="choice" >
+      <option value=""></option>
+      <option value="1">Mumbai to Pune(Rs.2000)</option>
+      <option value="2">Mumabai to Kerala(Rs.6000)</option>
+      <option value="3">Kerala to Chennai(Rs.4000)</option>
+      <option value="4">Bangalore to Kerala(Rs.4500)</option>
+      <option value="5">Mysore to Bangalore(Rs.3500)/option>
+      <option value="6">Goa to Mumbai(Rs.5000)</option>
+      <option value="7">Bangalore to chennai(Rs.8000)</option>
+    </select></h4>
+        <h4 style="color:white;font-size:20px;font-family:comic sans ms;">Car Type&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <select id="car">
+      <option value=""></option>
+      <option value="car1">A/c(Rs.2000)</option>
+      <option value="car2">Deluxe(Rs.3000)</option>
+      <option value="car3">Non-A/c(Rs.1500)</option>
+    </select></h4>
+    
+  
+    <input id="est" type="button" value="Estimate" onclick="calculator()" />
+    <input id="reset" type="reset" value="Reset" />
+    <input type="text" id="txtresult" name="TextBox3">
+  </form>
+      <br><br>
+      </div>
+  </div>
+      
+ </div> 
+     <br><br><br><br><br><br><br>
+ </div>
+    <script>
+function calculator() {
+  
+  var mtp=2000;
+  var mtk=6000;
+  var ktc=4000;
+  var btk=4500;
+  var mtb=3500;
+  var gtm=5000;
+  var btc=8000;
+  var car1=2000;
+  var car2=3000;
+  var car3=1500;
+  var result;
+  var calc = document.getElementById("choice").value;
+  var car = document.getElementById("car").value;
+  
+  switch(calc)
+  {
+            case"1" : result = mtp; 
+        break;
+            case"2" : result = mtk; 
+        break;
+            case"3" : result = ktc; 
+        break;
+         case"4" : result = btk; 
+        break;
+         case"5" : result = mtb; 
+        break;
+         case"6" : result = gtm; 
+        break;
+         case"7" : result = btc; 
+        break;
+}
+document.getElementById("txtresult").value=result;
+ switch(car)
+  {
+            case"car1" : result = result+car1; 
+        break;
+            case"car2" : result = result+car2; 
+        break;
+            case"car3" : result = result+car3; 
+        break;
+}
+document.getElementById("txtresult").value=result;
+}
+</script>
+   
+    </body>
+</html>

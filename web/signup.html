@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <script type="text/javascript">   
+    function validate()
+    { 
+        if( document.Registration.firstname.value == "" )
+        {
+            alert( "Please provide your Name!" );
+            document.Registration.firstname.focus() ;
+            return false;
+        }
+        if( document.Registration.age.value <=18 )
+        {
+            alert( "Underage" );
+            document.Registration.age.focus() ;
+            return false;
+        }
+   
+        if( document.Registration.address.value == "" )
+        {
+             alert( "Please provide your Postal Address!" );
+             document.Registration.address.focus() ;
+             return false;
+        }
+
+       
+
+        if( document.Registration.country.value == "" )
+        {
+             alert( "Please provide your country name!" );
+             document.Registration.country.focus() ;
+             return false;
+        }   
+
+       
+        
+             var mail = document.Registration.email.value;
+             atpos = mail.indexOf("@");
+             dotpos = mail.lastIndexOf(".");
+        if (mail == "" || atpos < 1 || ( dotpos - atpos < 2 )) 
+        {
+             alert("Please enter correct email ID")
+             document.Registration.email.focus() ;
+             return false;
+        }
+          
+       
+    }
+    var myInput = document.getElementById("psw");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() 
+            {
+                document.getElementById("message").style.display = "block";
+            }
+
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() 
+            {
+                document.getElementById("message").style.display = "none";
+            }
+
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() 
+            {
+              // Validate lowercase letters
+              var lowerCaseLetters = /[a-z]/g;
+              if(myInput.value.match(lowerCaseLetters)) 
+              {  
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+              } 
+              else 
+              {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+              }
+
+              // Validate capital letters
+              var upperCaseLetters = /[A-Z]/g;
+              if(myInput.value.match(upperCaseLetters)) 
+              {  
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+              } 
+              else 
+              {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+              }
+
+              // Validate numbers
+              var numbers = /[0-9]/g;
+              if(myInput.value.match(numbers))
+              {  
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+              } 
+              else 
+              {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+              }
+
+              // Validate length
+              if(myInput.value.length >= 8) 
+              {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+              } 
+              else 
+              {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+              }
+            }
+</script>
+        <style>
+            
+* {
+  box-sizing: border-box;
+}
+
+.container2 {
+  position: relative;
+  max-width: 800px;
+  margin-top:10%;
+  right:30%;
+  width:300%;
+  margin: 0 auto;
+}
+
+.container2 img {vertical-align: middle;}
+
+.container2 .content 
+{
+  position: absolute;
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 250%;
+  height: 700px;
+  padding: 70px;
+  text-align: left;
+}
+ .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 0 solid #f1f1f1;
+  position: absolute;
+  top: 40%;
+  left: 75%;
+  transform: translate(-50%, -38%);
+  z-index: 2;
+  width: 55%;
+  
+  text-align:left;
+}
+
+    
+
+  body, html
+  {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+.bg
+            {
+                height: 100%; 
+            
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            input,textarea
+            {
+                background: rgba(255,255,255,0.4);
+                margin:none auto;
+                padding: 10px;
+            }
+
+      </style>
+    </head>
+    <body class="bg" background="sea.jpg">
+         <div class="container2" >   
+         <form method="POST" name="Registration"  onsubmit="return(validate())" action="Add_Register" >
+         <br><br><br><br><br><br><br><br>
+            <div class="content"><br><br><br><br>
+                <img src="bg3.jpg">
+                    <div class="bg-text">
+                        <h1 style="font-family: monospace"><u>GnT Travels</u></h1>
+                      
+
+                        <h4>Register:</h4>
+                        User No                          : &nbsp;&nbsp;&nbsp;   <input type="text" name="u_id"><br><br><br>
+                        <i class="fa fa-user"></i> First Name:   <input type="text" name="firstname">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Age:   <input type="text" name="age"><br><br>
+                                              
+                        <i class="fa fa-address-card-o"></i>  Address: &nbsp;&nbsp;&nbsp;   <textarea rows="4" cols="40" name="address"></textarea> <br><br>
+                       
+                        Country  &nbsp;&nbsp;&nbsp;        : <input type="text" name="country"> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; EMAIL ID  :   <input type="text" size="30" name="email"><br><br>
+                       
+                        Contact No                          : &nbsp;&nbsp;&nbsp;   <input type="text" name="contact"><br><br><br>
+                        <hr>
+                        LOGIN ID:                           :<input type="text" name="id"><br><br>
+                        PASSWORD                            :<input type="password" name="password"><br><br>
+                  
+                <input type="SUBMIT" class="button" value="Add" name="check"  >
+                <input type="SUBMIT" class="button" value="Next" name="check">
+              
+          </div>
+                    </div><br><br><br>
+             </form><br><br><br>
+        </div>
+        
+
+
+    </body>
+</html>
