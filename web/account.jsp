@@ -1,4 +1,5 @@
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
@@ -336,10 +337,9 @@ p{
      <a href="#default" class="logo">GnT Travels</a>
      <h3> <mark>WELCOME ${username}</mark></h3>
     <div class="navbar-right">
-        <a href="comp.html"> <i class='fas fa-home' style='font-size:38px;'></i></a>&nbsp;&nbsp;&nbsp;
+        <a href="home2.jsp">Home</a>&nbsp;&nbsp;&nbsp;
   <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
   <a href="Cost.html">Cost Estimation</a>
-  <a href="accountinfo.html">My Account</a>
     <div class="dropdown">
     <button class="dropbtn">
       <i class='fas fa-gift' style='font-size:34px'></i>Packages 
@@ -353,6 +353,157 @@ p{
     <a href="LogoutServlet1">Logout</a>
   </div>
 </div>
+    <div class="form-popup" id="myForm">
+  <form action="editinfo" class="form-container2">
+    <h1>Edit Info</h1>
     
+    <label ><b>User_Id</b></label>
+    <input type="text" placeholder="Name" name="u_id" required>
+    
+    <label ><b>Name</b></label>
+    <input type="text" placeholder="Name" name="name" required>
+    
+    <label><b>Age</b></label>
+    <input type="text" placeholder="Age" name="age" required>
+    
+    <label><b>Address</b></label>
+    <input type="text" placeholder="Address" name="address" required>
+    
+    <label for="psw"><b>Country</b></label>
+    <input type="text" placeholder="Country" name="country" required>
+    
+    <label for="psw"><b>Email</b></label>
+    <input type="email" placeholder="Email Id" name="email" required><br>
+    
+    <label for="psw"><b>Contact no</b></label>
+    <input type="text" placeholder="contact" name="contact" required>
+    
+    <label for="psw"><b>Login Id</b></label>
+    <input type="login id" placeholder="Loginid" name="loginid" required>
+    
+   
+    <button type="submit" class="btn">Edit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+    <%
+  
+     String uid = request.getParameter("id");        
+    String password = request.getParameter("password");
+    String name="",age="",address="",country="",emailid="",contact="",loginid="",ticket="",from="",to="",hotel="",transport="",guide="",startdate="",enddate="",userid="",email="",bookingid="";
+
+    session.setAttribute("id",uid);
+    session.setAttribute("password", password);
+    
+    
+    %>
+ <%  
+     try
+   {
+        Class.forName("com.mysql.jdbc.Driver");
+        java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+        PreparedStatement ps = con.prepareStatement("select * from user_login  inner join booking on user_login.u_id=booking.u_id where user_login.u_id =? ");
+            
+          ps.setString(1,uid);
+ 
+          ResultSet rs = ps.executeQuery();
+          while(rs.next())
+          {
+                    /* name=rs.getString(2);
+                    age=rs.getString(3);
+                    address=rs.getString(4);
+                    country=rs.getString(5);
+                    emailid=rs.getString(6);
+                    contact=rs.getString(7);
+                    loginid=rs.getString(8);
+                    from=rs.getString(10);
+                    to=rs.getString(11);
+                    startdate=rs.getString(12);
+                    enddate=rs.getString(13);
+                    hotel=rs.getString(14);
+                    transport=rs.getString(15);
+                    ticket=rs.getString(16);
+                    bookingid=rs.getString(18);
+                    guide=rs.getString(20);*/
+                    
+                    name=rs.getString(2);
+                     age=rs.getString(3);
+                    address=rs.getString(4);
+                    country=rs.getString(5);
+                    emailid=rs.getString(6);
+                    contact=rs.getString(7);
+                    loginid=rs.getString(8);
+                    from=rs.getString(10);
+                    to=rs.getString(11);
+                    startdate=rs.getString(12);
+                    enddate=rs.getString(13);
+                    hotel=rs.getString(14);
+                    transport=rs.getString(15);
+                    ticket=rs.getString(16);
+                    bookingid=rs.getString(18);
+                    guide=rs.getString(20);
+                
+              
+              
+          } 
+           out.println("<br><center><h1 style='font-family:Mongolian Baiti;color: #99ff99;'><u><mark>Your Profile:</mark></u> </h1><center>");
+           out.println("<center><h3 style='font-family:monotype;color:white;size:33px'><p> NAME : " +name+ "<br>"+
+                        "AGE :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+age+     "<br>"+
+                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADDRESS : " +     address+     "<br>"+
+                        "COUNTRY :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+country+     "<br>"+
+                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EMAIL :&nbsp; &nbsp;&nbsp;&nbsp;"                +      emailid+    "<br>"+
+                        "&nbsp;&nbsp;&nbsp;CONTACT : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +contact+     "<br>"+
+                        "LOGIN_ID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "   +loginid+     "<br>"+
+                       
+                       "<p>"+"</h3><center>");
+           out.println("<center> <button  class='open-button' onclick='openForm()'>Edit Info</button></center>");
+           out.println("<br><br>");
+            out.println("<br><center><h1 style='font-family:Mongolian Baiti;color:#088A85;size:30px'><u>Your Booking Details </u></h1><center>");
+            out.println("<table id='customers' border=1 width=20% height=60% align=center>"
+                        +"<th> From</th>"
+                        +"<th>To </th>"
+                        +"<th>Start Date </th>"
+                        +"<th>End Date </th>"
+                        +"<th>Hotel </th>"
+
+                        +"<th>Transport </th>"
+
+                         + "<th>No Of People </th>"
+
+                        +"<th>Booking Id </th>"
+                         
+                        +"<th>Guide </th>"
+
+
+                        +"</tr>");
+            out.println("<tr style=color:#ff3399;size=30px>"
+             +"<td style=color:#ff3399;size=30px>" + from +"</td>"
+                        + "<td>" + to + "</td>"
+                        +"<td>" + startdate +"</td>"
+                        +"<td>" + enddate +"</td>"
+                        +"<td>" + hotel +"</td>"
+                        +"<td>" + transport +"</td>"
+                        +"<td>" + ticket +"</td>"
+                       
+                        +"<td>" + bookingid +"</td>"
+                        
+                        +"<td>" + guide +"</td>"
+                        + "</tr>");
+        }
+ catch(Exception e)
+{
+out.println("Exception : "+e);
+}
+%>
     </body>
 </html>

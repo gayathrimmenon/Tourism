@@ -140,6 +140,18 @@
         <servlet-name>editinfo</servlet-name>
         <servlet-class>editinfo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>payment</servlet-name>
+        <servlet-class>payment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>accountinfoservlet</servlet-name>
+        <servlet-class>accountinfoservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>payment_one</servlet-name>
+        <servlet-class>payment_one</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -279,6 +291,18 @@
     <servlet-mapping>
         <servlet-name>editinfo</servlet-name>
         <url-pattern>/editinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>payment</servlet-name>
+        <url-pattern>/payment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>accountinfoservlet</servlet-name>
+        <url-pattern>/accountinfoservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>payment_one</servlet-name>
+        <url-pattern>/payment_one</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -358,13 +358,13 @@ span.price {
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <form >
       
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="fname" name="fullname" placeholder="John M. Doe">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="john@example.com">
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
@@ -385,45 +385,45 @@ span.price {
               <div class="col-50">
                   <h3>Package</h3>
                 <label for="package">Package selected</label>
-                <select id="place">
+                <select id="place" name="package_selected">
                     <option></option>
-                     <option value="1">Kerala</option>
-                    <option value="2">Kashmir</option>
-                    <option value="3">Goa</option>
-                    <option value="4">Gujarat</option>
-                    <option value="5">Manali</option>
-                    <option value="6">Delhi</option>
-                    <option value="7">Ooty</option>
-                    <option value="8">Mysore</option>
-                    <option value="9">Punjab</option>
-                    <option value="10">Italy</option>
-                    <option value="11">Bali</option>
-                    <option value="12">London</option>
-                    <option value="13">Australia</option>
-                    <option value="14">Nepal</option>
-                    <option value="15">Malayasia</option>
-                    <option value="16">America</option>
-                    <option value="17">Paris</option>
-                    <option value="18">Thailand</option>
+                     <option value="1" name="kerala">Kerala</option>
+                    <option value="2" name="kashmir">Kashmir</option>
+                    <option value="3" name="goa">Goa</option>
+                    <option value="4" name="gujarat">Gujarat</option>
+                    <option value="5" name="manali">Manali</option>
+                    <option value="6" name="delhi">Delhi</option>
+                    <option value="7" name="ooty">Ooty</option>
+                    <option value="8" name="mysore">Mysore</option>
+                    <option value="9" name="punjab">Punjab</option>
+                    <option value="10" name="italy">Italy</option>
+                    <option value="11" name="bali">Bali</option>
+                    <option value="12" name="london">London</option>
+                    <option value="13" name="australia">Australia</option>
+                    <option value="14" name="nepal" > Nepal</option>
+                    <option value="15" name="malayasia">Malayasia</option>
+                    <option value="16" name="america">America</option>
+                    <option value="17" name="paris">Paris</option>
+                    <option value="18" name="thailand">Thailand</option>
                     
                 </select>
               </div>
               <div class="col-50">
                 <label>Travel Mode</label>
-                <select id="travel">
+                <select id="travel" name="travel_mode">
                     <option></option>
-                    <option value="flight">Flight</option>
-                    <option value="train">Train</option>
+                    <option value="flight" name="flight">Flight</option>
+                    <option value="train" name="train">Train</option>
                 </select>
               </div>
                  <div class="col-50">
-                <label >No of persons</label>
-                <input type="text" id="no" name="no" placeholder="0">
+                <label name="nop" >No of persons</label>
+                <input type="text" id="no" name="nop" placeholder="0">
               </div>    
             
           <div class="col-50">
                 <label>Flight From:</label>
-                <select id="flightfrom">
+                <select id="flightfrom" name="flight_from">
                     <option></option>
                    <option value="1">Kerala</option>
                     <option value="2">Mumbai</option>
@@ -438,7 +438,7 @@ span.price {
               </div>
            <div class="col-50">
                 <label>Flight to:</label>
-                <select id="flightto">
+                <select id="flightto" name="flight_to">
                     <option></option>
                    <option value="1">Kerala</option>
                     <option value="2">Kashmir</option>
@@ -463,7 +463,7 @@ span.price {
                  
                 <div class="col-50">
                 <label>Train From:</label>
-                <select id="trainfrom">
+                <select id="trainfrom" name="train_from">
                     <option></option>
                    <option value="1">Kerala</option>
                     <option value="2">Mumbai</option>
@@ -479,7 +479,7 @@ span.price {
                 
                  <div class="col-50">
                 <label>Train to:</label>
-                <select id="trainto">
+                <select id="trainto" name="train_to">
                     <option></option>
                    <option value="1">Kerala</option>
                     <option value="2">Kashmir</option>
@@ -530,8 +530,11 @@ span.price {
  </div>
           <input id="est2" type="reset" value="Reset"  />
        <input id="est" type="button" value="Estimate" onclick="calculator()" />
-        <input type="submit" value="Continue to Pay" class="btn">
+       
       </form>
+        <form action="payment">
+             <input type="submit" value="Continue to Pay" class="btn">
+        </form>
     </div>
   </div>
 </script>
