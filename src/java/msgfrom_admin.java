@@ -34,6 +34,7 @@ public class msgfrom_admin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String g_id=request.getParameter("g_id");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -44,25 +45,29 @@ public class msgfrom_admin extends HttpServlet {
             {
                 Class.forName("com.mysql.jdbc.Driver");
                 java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
-                PreparedStatement stmt=con.prepareStatement("select * from msg_guide");
+                PreparedStatement stmt=con.prepareStatement("select * from msg_guide where g_id=?");
+                
+                stmt.setString(1,g_id);
+ 
+                
                 ResultSet rs=stmt.executeQuery(); 
                
                        
             out.println("<center>");
            out.println("<h1 style='font-family:'arial';font-color:'maroon' '>Message From Admin</h1>");
             out.println("<table border=1 width=10% height=50% align=center>"
-                   +"<th>Email</th>"
+                   
                    +"<th>Message </th>"
                     +"<th>Date</th>"
                     
                    
                   
                     +"</tr>");
-            String email,msg,date;
+            String msg,date;
             while(rs.next())
                 {
                     
-                    email=rs.getString(2);
+                    
                     msg=rs.getString(3);
                     date=rs.getString(4);
                     
@@ -70,8 +75,7 @@ public class msgfrom_admin extends HttpServlet {
                    
                
                     out.println("<tr style=color:crimson red>"
-                        +"<td>" + email +"</td>"
-                                
+                      
                         +"<td>" + msg +"</td>"
                                  +"<td>" + date +"</td>"
                         

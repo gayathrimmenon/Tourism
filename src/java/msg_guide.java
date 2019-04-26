@@ -33,7 +33,8 @@ public class msg_guide extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             String name=request.getParameter("name");
+            String g_id=request.getParameter("g_id");
+             String id=request.getParameter("id");
             String email=request.getParameter("email");
             String date=request.getParameter("date");
             String message=request.getParameter("msg");
@@ -48,12 +49,13 @@ public class msg_guide extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
                  java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
                
-                PreparedStatement ps = con.prepareStatement("insert into msg_guide values(?,?,?,?)");
+                PreparedStatement ps = con.prepareStatement("insert into msg_guide values(?,?,?,?,?)");
                 
-                 ps.setString(1,name);
-                ps.setString(2,email);
-                ps.setString(3,message);
-                 ps.setString(4,date);
+                  ps.setString(1,g_id);
+                 ps.setString(2,id);
+                ps.setString(3,email);
+                ps.setString(4,message);
+                 ps.setString(5,date);
                 
                  ps.executeUpdate();
                  out.println("<html><body><script>alert('your Suggestion or comments have beend send');window.location.assign('homepage.html');</script></body></html>");

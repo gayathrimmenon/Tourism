@@ -35,6 +35,7 @@ public class Guide extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
              String name=request.getParameter("firstname");
+             String g_id=request.getParameter("g_id");
             String age=request.getParameter("age");
             String address=request.getParameter("address");
             String country=request.getParameter("country");
@@ -57,7 +58,7 @@ public class Guide extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
                
-                PreparedStatement ps = con.prepareStatement("insert into guide values(?,?,?,?,?,?,?,?,?,?)");
+                PreparedStatement ps = con.prepareStatement("insert into guide values(?,?,?,?,?,?,?,?,?,?,?)");
                 out.println(" <style>\n" +
 "            \n" +
 "* {\n" +
@@ -153,17 +154,17 @@ public class Guide extends HttpServlet {
 "                    </div>\n" +
 "        </div>");
  
-            
-                ps.setString(1,name);
-                ps.setString(2,age);
-                ps.setString(3,address);
-                ps.setString(4,country);
-                ps.setString(5,Email );
-                ps.setString(6,Qualification);
-                ps.setString(7,Experience );
-                ps.setString(8,Contact);
-                ps.setString(9,Loginid);
-                ps.setString(10,Password);
+                ps.setString(1, g_id);
+                ps.setString(2,name);
+                ps.setString(3,age);
+                ps.setString(4,address);
+                ps.setString(5,country);
+                ps.setString(6,Email );
+                ps.setString(7,Qualification);
+                ps.setString(8,Experience );
+                ps.setString(9,Contact);
+                ps.setString(10,Loginid);
+                ps.setString(11,Password);
                 
                  ps.executeUpdate();
                 con.close();

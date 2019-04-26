@@ -1,8 +1,4 @@
-<%-- 
-    Document   : homeforguide
-    Created on : Apr 1, 2019, 12:59:05 PM
-    Author     : KHSCI5MCA16122
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -64,9 +60,11 @@
         <form action="inter_one" method="POST">
             <input type="submit" class="button button1" value="International booked tickets" formtarget="f2" vspace="10"> 
         </form>
-         <form action="msgfrom_admin" method="POST">
+        
+         <form action="guide_id.html" method="POST">
             <input type="submit" class="button button1" value="Message from Admin " formtarget="f2" vspace="10"> 
         </form>
+        
          <form action="msg_admin.html" method="POST">
             <input type="submit" class="button button1" value="Message to Admin " formtarget="f2" vspace="10"> 
         </form>

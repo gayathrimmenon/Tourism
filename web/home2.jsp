@@ -340,6 +340,7 @@ p{
   <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
   <a href="Cost.html">Cost Estimation</a>
   <a href="accountinfo.html">My Account</a>
+  <a href="payment.html">Payment</a>
     <div class="dropdown">
     <button class="dropbtn">
       <i class='fas fa-gift' style='font-size:34px'></i>Packages 

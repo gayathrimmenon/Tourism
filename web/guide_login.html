@@ -79,15 +79,7 @@ and open the template in the editor.
              return false;
         }
           
-       if( document.Registration.contact.value == "" ||
-                isNaN( document.Registration.contact.value) ||
-                document.Registration.contact.value.length != 10 )
-        {
-             alert( "Please provide a Mobile No in the format 123." );
-             document.Registration.contact.focus() ;
-             return false;
-        }
-             return( true );
+      
     }
     var myInput = document.getElementById("psw");
             var letter = document.getElementById("letter");
@@ -233,7 +225,7 @@ and open the template in the editor.
       </style>
     </head>
     <body class="bg" background="sea.jpg">
-          <div class="container2" >   
+        <div class="container2" >  <a href="guideloginpage.html">LOGIN</a> 
          <form method="POST" name="Registration"  onsubmit="return(validate())" action="Add_Guide" >
          <br><br><br><br><br><br><br><br>
             <div class="content"><br><br><br><br>
@@ -244,7 +236,7 @@ and open the template in the editor.
 
                         <h4>Register:</h4>
                         <i class="fa fa-user"></i> First Name:   <input type="text" name="firstname">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Age:   <input type="text" name="age"><br><br>
-                                              
+                        g_id:   <input type="text" name="g_id">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;                 
                         <i class="fa fa-address-card-o"></i>  Address: &nbsp;&nbsp;&nbsp;   <textarea rows="4" cols="40" name="address"></textarea> <br><br>
                        
                         Country  &nbsp;&nbsp;&nbsp;        : <input type="text" name="country"> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; EMAIL ID  :   <input type="text" size="30" name="email"><br><br>
@@ -256,7 +248,7 @@ and open the template in the editor.
                         PASSWORD                            :<input type="password" name="password" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br><br>
                   
                 <input type="SUBMIT" class="button" value="Add" name="check"  >
-                
+               
               
           </div>
                     </div><br><br><br>

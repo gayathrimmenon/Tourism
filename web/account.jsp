@@ -337,9 +337,9 @@ p{
      <a href="#default" class="logo">GnT Travels</a>
      <h3> <mark>WELCOME ${username}</mark></h3>
     <div class="navbar-right">
-        <a href="home2.jsp">Home</a>&nbsp;&nbsp;&nbsp;
-  <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
-  <a href="Cost.html">Cost Estimation</a>
+        <a href="home2.jsp">Home</a> &nbsp;&nbsp;&nbsp;
+        <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
+        <a href="Cost.html">Cost Estimation</a>
     <div class="dropdown">
     <button class="dropbtn">
       <i class='fas fa-gift' style='font-size:34px'></i>Packages 
@@ -355,6 +355,7 @@ p{
 </div>
     <div class="form-popup" id="myForm">
   <form action="editinfo" class="form-container2">
+      
     <h1>Edit Info</h1>
     
     <label ><b>User_Id</b></label>

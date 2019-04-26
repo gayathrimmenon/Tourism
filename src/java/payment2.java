@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author KHSCI5MCA16122
  */
-public class payment extends HttpServlet {
+public class payment2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -64,6 +64,7 @@ public class payment extends HttpServlet {
              //int cardno = Integer.parseInt(card_no);
             String exp_month=request.getParameter("expmonth");
             String exp_year=request.getParameter("expyear");
+            int exp=Integer.parseInt(exp_year);
             String cvv=request.getParameter("cvv");
              //int cvv_no = Integer.parseInt(cvv);
             String total=request.getParameter("amt");
@@ -114,14 +115,22 @@ public class payment extends HttpServlet {
                 ps.setString(18, cvv);
                 ps.setString(19,total);
                 
-              
+                if(exp<dayOfYear)
+                {
                 ps.setString(20,"yes");
+                 out.println("<html><body><script>alert('Your payment is done');window.location.assign('home2.jsp');</script></body></html>");
+                }
+                else
+                {
+                    ps.setString(20,"no");
+                    out.println("<html><body><script>alert('Your payment is not done');window.location.assign('home2.jsp');</script></body></html>");
+                }
                 
                 ps.executeUpdate();
                 out.println(ps.toString());
                 con.close();
                 
-                out.println("<html><body><script>alert('Your payment is done');window.location.assign('home2.jsp');</script></body></html>");
+                
              
             }
             catch(Exception e) 

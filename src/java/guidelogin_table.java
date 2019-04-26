@@ -39,7 +39,7 @@ public class guidelogin_table extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             ServletContext application = getServletConfig().getServletContext();
             String bt1 = request.getParameter("Login");
-            String uname = request.getParameter("id");
+            String gname = request.getParameter("g_id");
             String pass = request.getParameter("password");
             
             out.println("<!DOCTYPE html>");
@@ -59,9 +59,9 @@ public class guidelogin_table extends HttpServlet {
                     int count =0;
                     while(rs.next())
                     {
-                        if(uname.equals(rs.getString(9)) && pass.equals(rs.getString(10)))
+                        if(gname.equals(rs.getString(1)) && pass.equals(rs.getString(11)))
                         {
-                            String username =rs.getString(9);
+                            String username =rs.getString(1);
                            application.setAttribute("username",username);
                             RequestDispatcher rd = request.getRequestDispatcher("framepageforguide.html");
                            rd.forward(request, response);

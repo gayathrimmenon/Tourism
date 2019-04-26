@@ -152,6 +152,10 @@
         <servlet-name>payment_one</servlet-name>
         <servlet-class>payment_one</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>payment2</servlet-name>
+        <servlet-class>payment2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -303,6 +307,10 @@
     <servlet-mapping>
         <servlet-name>payment_one</servlet-name>
         <url-pattern>/payment_one</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>payment2</servlet-name>
+        <url-pattern>/payment2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
