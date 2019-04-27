@@ -32,7 +32,7 @@ public class Add_Register extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-              String btn = request.getParameter("check");
+            String btn = request.getParameter("check");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -40,7 +40,7 @@ public class Add_Register extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-             if(btn.equals("Add"))
+             if(btn.equals("check"))
             {
                 RequestDispatcher rd = request.getRequestDispatcher("Register");
                 rd.include(request, response);

@@ -6,12 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author KHSCI5MCA16122
  */
-public class userlogin_table extends HttpServlet {
+public class carbook extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,59 +33,41 @@ public class userlogin_table extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            ServletContext application = getServletConfig().getServletContext();
-             String bt1 = request.getParameter("Login");
-            String uname = request.getParameter("id");
-            String pass = request.getParameter("password");
-            
+            String dest=request.getParameter("dest");
+            String cartype=request.getParameter("type");
+            String date=request.getParameter("date");
+            String total=request.getParameter("TextBox3");
+            String u_id=request.getParameter("u_id");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet userlogin_table</title>");            
+            out.println("<title>Servlet carbook</title>");            
             out.println("</head>");
             out.println("<body>");
-           if(bt1.equals("Login"))
+             try
             {
-                try
-                {
-                    Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
-                    PreparedStatement ps = con.prepareStatement("select* from user_login");
-                    ResultSet rs = ps.executeQuery();
-                    int count =0;
-                    while(rs.next())
-                    {
-                        if(uname.equals(rs.getString(8)) && pass.equals(rs.getString(9)))
-                        {
-                            String username =rs.getString(8);
-                            String userid=rs.getString(1);
-                            application.setAttribute("username",username);
-                            application.setAttribute("userid", userid);
-                            RequestDispatcher rd = request.getRequestDispatcher("home2.jsp");
-                             String htmlResponse = "<html>";
-                                htmlResponse += "<h2>Your username is: " + uname + "<br/>";       
-   
-                                 htmlResponse += "</html>";  
-                           rd.forward(request, response);
-                            //response.sendRedirect("welcomehomepage.html");"
-                            count++;
-                        }   
-                        
-                    }
-                        if(count == 0)
-                        {
-                             out.println("<html><body><script>alert('wrong id or password');window.location.assign('user_login.html');</script></body></html>");
-                            
-                        }
-                        con.close();
-                    
-                }
-                catch(Exception e)
-                {
-                    out.println("exception : "+e);
-                }
-                   
+                Class.forName("com.mysql.jdbc.Driver");
+                 java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+               
+                PreparedStatement ps   =  con.prepareStatement("insert into car values(?,?,?,?,?)");
+                
+                
+                ps.setString(1,dest);
+                ps.setString(2,cartype);
+                ps.setString(3,total);
+                ps.setString(4,date);
+                 ps.setString(5,u_id);
+              
+                
+                 ps.executeUpdate();
+                  out.println("<html><body><script>alert('your booking is done');window.location.assign('Cost.html');</script></body></html>");
+                con.close();
+            
             }
+              catch(Exception e)
+              {
+                  out.println(e);
+              }
             out.println("</body>");
             out.println("</html>");
         }

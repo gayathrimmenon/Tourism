@@ -41,6 +41,7 @@ public class booking_one extends HttpServlet {
             out.println("<title>Servlet booking_one</title>");            
             out.println("</head>");
             out.println("<body>");
+                out.println("<form action='guideavail.html'><button name='avail'>Availalable</button></form>");
              try
             {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -68,11 +69,12 @@ public class booking_one extends HttpServlet {
                     +"<th>Booking Id </th>"
                      +"<th>Email </th>"
                      +"<th>Guide </th>"
+                     +"<th>Guide_Taken </th>"
                     
                    
                   
                     +"</tr>");
-            String ticket,from,to,hotel,transport,guide,startdate,enddate,userid,email,bookingid;
+            String ticket,from,to,hotel,transport,guide,startdate,enddate,userid,email,bookingid,guide_taken;
             while(rs.next())
                 {
                     
@@ -89,7 +91,7 @@ public class booking_one extends HttpServlet {
                     bookingid=rs.getString(9);
                     email=rs.getString(10);
                      guide=rs.getString(11);
-                   
+                   guide_taken=rs.getString(12);
                
                     out.println("<tr style=color:crimson red>"
                         
@@ -104,10 +106,12 @@ public class booking_one extends HttpServlet {
                         +"<td>" + bookingid +"</td>"
                         +"<td>" + email +"</td>"
                         +"<td>" + guide +"</td>"
-                                
+                        +"<td>" + guide_taken +"</td>"        
                         
                        
                         + "</tr>");
+                    
+                
                     
                 }
             }

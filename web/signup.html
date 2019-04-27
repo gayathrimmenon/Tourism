@@ -57,7 +57,7 @@ and open the template in the editor.
           
        
     }
-    var myInput = document.getElementById("password");
+    var myInput = document.getElementById("psw");
             var letter = document.getElementById("letter");
             var capital = document.getElementById("capital");
             var number = document.getElementById("number");
@@ -211,7 +211,7 @@ and open the template in the editor.
                       
 
                         <h4>Register:</h4>
-                        User No                          : &nbsp;&nbsp;&nbsp;   <input type="text" name="u_id"><br><br><br>
+                      
                         <i class="fa fa-user"></i> First Name:   <input type="text" name="firstname">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Age:   <input type="text" name="age"><br><br>
                                               
                         <i class="fa fa-address-card-o"></i>  Address: &nbsp;&nbsp;&nbsp;   <textarea rows="4" cols="40" name="address"></textarea> <br><br>
@@ -221,9 +221,10 @@ and open the template in the editor.
                         Contact No                          : &nbsp;&nbsp;&nbsp;   <input type="text" name="contact"><br><br><br>
                         <hr>
                         LOGIN ID:                           :<input type="text" name="id"><br><br>
-                        PASSWORD                            :<input type="password" name="password"><br><br>
+                        PASSWORD                            :<input type="password" name="password" id='psw' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br><br>
                   
-                <input type="SUBMIT" class="button" value="Add" name="check"  >
+                <input type="SUBMIT" class="button" value="check" name="check"  >
+                 <input type="reset" class="button" value="clear" name="clear"  >
                
               
           </div>

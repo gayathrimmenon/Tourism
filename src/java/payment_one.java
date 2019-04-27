@@ -52,6 +52,7 @@ public class payment_one extends HttpServlet {
            out.println("<h1 style='font-family:'arial';font-color:'maroon' '>Payment Details</h1>");
             out.println("<table border=1 width=10% height=50% align=center>"
                     + "<tr><th>User_Id </th>"
+                     + "<tr><th>Booking_Id </th>"
                     + "<th>FullName </th>"
                     +"<th>EmailId </th>"
                     
@@ -62,6 +63,7 @@ public class payment_one extends HttpServlet {
                     +"<th>travel mode </th>"
                     +"<th> No of persons</th>"
                     +"<th> flight from</th>"
+                     +"<th> flight to</th>"
                     +"<th>Train From </th>"
                     +"<th>Train To </th>"
                     +"<th> Name on Card</th>"
@@ -73,34 +75,36 @@ public class payment_one extends HttpServlet {
                     +"<th>Payed?</th>"
                   
                     +"</tr>");
-            String u_id,name,address,city,state,emailid,pack,travelmode,nop,flight_from,flight_to,train_from,train_to,cardname,cardno,cvv,expmonth,expyear,total,payed;
+            String u_id,b_id,name,address,city,state,emailid,pack,travelmode,nop,flight_from,flight_to,train_from,train_to,cardname,cardno,cvv,expmonth,expyear,total,payed;
             while(rs.next())
                 {
-                    u_id=rs.getString(1);
-                    name=rs.getString(2);
-                     emailid=rs.getString(3);
-                    address=rs.getString(4);
-                    city=rs.getString(5);
-                    state=rs.getString(6);
-                    pack=rs.getString(7);
-                    travelmode=rs.getString(8);
-                    nop=rs.getString(9);
-                   flight_from=rs.getString(10);
-                     flight_to=rs.getString(11);
-                     train_from=rs.getString(12);
-                     train_to=rs.getString(13);
-                     cardname=rs.getString(14);
-                     cardno=rs.getString(15);
-                     cvv=rs.getString(16);
-                     expmonth=rs.getString(17);
-                    expyear=rs.getString(18);
-                     total=rs.getString(19);
-                    payed=rs.getString(20);
+                    u_id=rs.getString(6);
+                    b_id=rs.getString(7);
+                    name=rs.getString(1);
+                     emailid=rs.getString(2);
+                    address=rs.getString(3);
+                    city=rs.getString(4);
+                    state=rs.getString(5);
+                    pack=rs.getString(8);
+                    travelmode=rs.getString(9);
+                    nop=rs.getString(10);
+                   flight_from=rs.getString(11);
+                     flight_to=rs.getString(12);
+                     train_from=rs.getString(13);
+                     train_to=rs.getString(14);
+                     cardname=rs.getString(15);
+                     cardno=rs.getString(16);
+                     cvv=rs.getString(17);
+                     expmonth=rs.getString(18);
+                    expyear=rs.getString(19);
+                     total=rs.getString(20);
+                    payed=rs.getString(21);
                                   
                        
               
                     out.println("<tr style=color:crimson red>"
                         +"<td>" + u_id +"</td>"
+                                +"<td>" + b_id +"</td>"
                         +"<td>" + name +"</td>"
                        +"<td>" + emailid +"</td>"
                         + "<td>" + address + "</td>"

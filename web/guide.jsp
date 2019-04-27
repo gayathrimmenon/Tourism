@@ -1,4 +1,6 @@
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
@@ -335,13 +337,10 @@ p{
 <div class="navbar">
      <a href="#default" class="logo">GnT Travels</a>
      <h3> <mark>WELCOME ${username}</mark></h3>
-     <h3> <mark>YOUR USER ID IS: ${userid}</mark></h3>
     <div class="navbar-right">
-        <a href="comp.html"> <i class='fas fa-home' style='font-size:38px;'></i></a>&nbsp;&nbsp;&nbsp;
-  <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
-  <a href="Cost.html">Cost Estimation</a>
-  <a href="accountinfo.html">My Account</a>
-  <a href="payment.html">Payment</a>
+        <a href="home2.jsp">Home</a> &nbsp;&nbsp;&nbsp;
+        <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
+        <a href="Cost.html">Cost Estimation</a>
     <div class="dropdown">
     <button class="dropbtn">
       <i class='fas fa-gift' style='font-size:34px'></i>Packages 
@@ -355,6 +354,97 @@ p{
     <a href="LogoutServlet1">Logout</a>
   </div>
 </div>
+   
+   
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+    <%
+  
+     String uid = request.getParameter("g_id");        
     
+   
+
+    session.setAttribute("g_id",uid);
+  
+    
+    
+    %>
+ <%  
+    try
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+                PreparedStatement stmt=con.prepareStatement("select * from guide");
+                ResultSet rs=stmt.executeQuery(); 
+               
+                       
+            out.println("<center>");
+           out.println("<h1 style='font-family:'arial';font-color:'maroon' '><mark>Guide Details<MARK></h1>");
+            out.println("<table border=1 width=10% height=50% align=center>"
+                     + "<tr><th>g_id </th>"
+                    + "<th>Name </th>"
+                    +"<th>Age </th>"
+                    
+                    +"<th>Address </th>"
+                    +"<th>Country </th>"
+                   
+                    +"<th>EmailId </th>"
+                     +"<th>Qualification </th>"
+                     +"<th>Experience</th>"
+                    +"<th>Contact </th>"
+                    +"<th>LoginId </th>"
+                   
+                  
+                    +"</tr>");
+            String name,age,address,country,emailid,contact,loginid,qualification,experience,g_id;
+            while(rs.next())
+                {
+                    g_id=rs.getString(1);
+                    name=rs.getString(1);
+                    age=rs.getString(2);
+                    address=rs.getString(3);
+                    country=rs.getString(4);
+                    emailid=rs.getString(5);
+                    qualification=rs.getString(6);
+                    experience=rs.getString(7);
+                    contact=rs.getString(8);
+                    loginid=rs.getString(9);
+                   
+               
+                    out.println("<tr style=color:crimson red>"
+                         +"<td>" + g_id +"</td>"
+                        +"<td>" + name +"</td>"
+                        +"<td>" + age +"</td>"
+                        + "<td>" + address + "</td>"
+                        +"<td>" + country +"</td>"
+                        +"<td>" + emailid +"</td>"
+                        +"<td>" + qualification +"</td>"
+                        +"<td>" + experience +"</td>"
+                                
+                        +"<td>" + contact +"</td>"
+                        +"<td>" + loginid +"</td>"
+                       
+                       
+                        + "</tr>");
+                    
+                }
+            }
+            catch(Exception e)
+            {
+                out.println("Exception : "+e);
+            }
+            out.println("</table>");
+              
+          
+%>
     </body>
 </html>

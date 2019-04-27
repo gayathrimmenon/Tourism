@@ -156,6 +156,46 @@
         <servlet-name>payment2</servlet-name>
         <servlet-class>payment2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>msg_user</servlet-name>
+        <servlet-class>msg_user</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>paymentinfo</servlet-name>
+        <servlet-class>paymentinfo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>paymentinfoservlet</servlet-name>
+        <servlet-class>paymentinfoservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>available</servlet-name>
+        <servlet-class>available</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>availableguide_admin</servlet-name>
+        <servlet-class>availableguide_admin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updatebooking</servlet-name>
+        <servlet-class>updatebooking</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guideinfoservlet</servlet-name>
+        <servlet-class>guideinfoservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>carbook</servlet-name>
+        <servlet-class>carbook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>booked_car</servlet-name>
+        <servlet-class>booked_car</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>carinfoservlet</servlet-name>
+        <servlet-class>carinfoservlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -311,6 +351,46 @@
     <servlet-mapping>
         <servlet-name>payment2</servlet-name>
         <url-pattern>/payment2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>msg_user</servlet-name>
+        <url-pattern>/msg_user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>paymentinfo</servlet-name>
+        <url-pattern>/paymentinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>paymentinfoservlet</servlet-name>
+        <url-pattern>/paymentinfoservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>available</servlet-name>
+        <url-pattern>/available</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>availableguide_admin</servlet-name>
+        <url-pattern>/availableguide_admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updatebooking</servlet-name>
+        <url-pattern>/updatebooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guideinfoservlet</servlet-name>
+        <url-pattern>/guideinfoservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>carbook</servlet-name>
+        <url-pattern>/carbook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>booked_car</servlet-name>
+        <url-pattern>/booked_car</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>carinfoservlet</servlet-name>
+        <url-pattern>/carinfoservlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

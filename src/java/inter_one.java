@@ -66,11 +66,11 @@ public class inter_one extends HttpServlet {
                      + "<th>No Of People </th>"
                      +"<th>Email </th>"
                      +"<th>Guide </th>"
-                    
+                     +"<th>Guide_taken </th>"
                    
                   
                     +"</tr>");
-            String ticket,from,to,hotel,transport,guide,startdate,enddate,loginid,email;
+            String ticket,from,to,hotel,transport,guide,startdate,enddate,loginid,email,guide_taken;
             while(rs.next())
                 {
                     
@@ -84,7 +84,7 @@ public class inter_one extends HttpServlet {
                     guide=rs.getString(10);
                     ticket=rs.getString(8);
                     email=rs.getString(9);
-                    
+                    guide_taken=rs.getString(12);
                    
                
                     out.println("<tr style=color:crimson red>"

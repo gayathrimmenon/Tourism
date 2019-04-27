@@ -6,12 +6,9 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author KHSCI5MCA16122
  */
-public class userlogin_table extends HttpServlet {
+public class availableguide_admin extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,59 +34,77 @@ public class userlogin_table extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            ServletContext application = getServletConfig().getServletContext();
-             String bt1 = request.getParameter("Login");
-            String uname = request.getParameter("id");
-            String pass = request.getParameter("password");
-            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet userlogin_table</title>");            
+            out.println("<title>Servlet availableguide_admin</title>");            
             out.println("</head>");
             out.println("<body>");
-           if(bt1.equals("Login"))
+           try
             {
-                try
-                {
-                    Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
-                    PreparedStatement ps = con.prepareStatement("select* from user_login");
-                    ResultSet rs = ps.executeQuery();
-                    int count =0;
-                    while(rs.next())
-                    {
-                        if(uname.equals(rs.getString(8)) && pass.equals(rs.getString(9)))
-                        {
-                            String username =rs.getString(8);
-                            String userid=rs.getString(1);
-                            application.setAttribute("username",username);
-                            application.setAttribute("userid", userid);
-                            RequestDispatcher rd = request.getRequestDispatcher("home2.jsp");
-                             String htmlResponse = "<html>";
-                                htmlResponse += "<h2>Your username is: " + uname + "<br/>";       
-   
-                                 htmlResponse += "</html>";  
-                           rd.forward(request, response);
-                            //response.sendRedirect("welcomehomepage.html");"
-                            count++;
-                        }   
-                        
-                    }
-                        if(count == 0)
-                        {
-                             out.println("<html><body><script>alert('wrong id or password');window.location.assign('user_login.html');</script></body></html>");
-                            
-                        }
-                        con.close();
+                Class.forName("com.mysql.jdbc.Driver");
+                java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+                PreparedStatement stmt=con.prepareStatement("select * from availableguide");
+                ResultSet rs=stmt.executeQuery(); 
+               
+                       
+            out.println("<center>");
+           out.println("<h1 style='font-family:'arial';font-color:'maroon' '>Available Guide</h1>");
+            out.println("<table border=1 width=10% height=50% align=center>"
                     
-                }
-                catch(Exception e)
-                {
-                    out.println("exception : "+e);
-                }
+                    
+                    +"<tr><th> From</th>"
+                    
+                    +"<th>To </th>"
+                    +"<th>Start Date </th>"
+                    +"<th>End Date </th>"
                    
+                    +"<th>Booking Id </th>"
+                     
+                     +"<th>Guide_Id </th>"
+                    
+                   
+                  
+                    +"</tr>");
+            String ticket,from,to,hotel,transport,guide,startdate,enddate,userid,email,bookingid;
+            while(rs.next())
+                {
+                    
+                    
+                    from=rs.getString(1);
+                    to=rs.getString(2);
+                    startdate=rs.getString(3);
+                    enddate=rs.getString(4);
+                   
+                    bookingid=rs.getString(5);
+                    
+                     guide=rs.getString(6);
+                   
+               
+                    out.println("<tr style=color:crimson red>"
+                        
+                        +"<td>" + from +"</td>"
+                        + "<td>" + to + "</td>"
+                        +"<td>" + startdate +"</td>"
+                        +"<td>" + enddate +"</td>"
+                       
+                        +"<td>" + bookingid +"</td>"
+                       
+                        +"<td>" + guide +"</td>"
+                                
+                        
+                       
+                        + "</tr>");
+                    
+                    out.println("<form action='updatebooking.html'><button name='go'>Update</button></form>");
+                }
+            
             }
+            catch(Exception e)
+            {
+                out.println("Exception : "+e);
+            }
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -39,7 +39,7 @@ public class accountinfoservlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             ServletContext application = getServletConfig().getServletContext();
              String bt1 = request.getParameter("go");
-            String uname = request.getParameter("id");
+            String uname = request.getParameter("u_id");
            
             
             out.println("<!DOCTYPE html>");

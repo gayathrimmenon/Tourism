@@ -64,28 +64,30 @@ public class booking_one_guide extends HttpServlet {
                     +"<th>Hotel </th>"
                    
                     +"<th>Transport </th>"
-                    +"<th>LoginId </th>"
+                    
+                    +"<th>b_id </th>"
                      + "<th>No Of People </th>"
                      +"<th>Email </th>"
+                    
                      +"<th>Guide </th>"
                     
                    
                   
                     +"</tr>");
-            String ticket,from,to,hotel,transport,guide,startdate,enddate,loginid,email;
+            String ticket,from,to,hotel,transport,guide,startdate,enddate,b_id,email;
             while(rs.next())
                 {
                     
-                    loginid=rs.getString(7);
+                    b_id=rs.getString(9);
                     from=rs.getString(1);
                     to=rs.getString(2);
                     startdate=rs.getString(3);
                     enddate=rs.getString(4);
                     hotel=rs.getString(5);
                     transport=rs.getString(6);
-                    guide=rs.getString(10);
-                    ticket=rs.getString(8);
-                    email=rs.getString(9);
+                    guide=rs.getString(11);
+                    ticket=rs.getString(7);
+                    email=rs.getString(10);
                     
                    
                
@@ -97,7 +99,7 @@ public class booking_one_guide extends HttpServlet {
                         +"<td>" + enddate +"</td>"
                         +"<td>" + hotel +"</td>"
                         +"<td>" + transport +"</td>"
-                        +"<td>" + loginid +"</td>"
+                        +"<td>" + b_id +"</td>"
                         
                         +"<td>" + ticket +"</td>"
                         +"<td>" + email +"</td>"

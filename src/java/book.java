@@ -7,6 +7,9 @@ import java.sql.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,20 +37,55 @@ public class book extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String u_id = request.getParameter("u_id");
             int uid = Integer.parseInt(u_id);
-            String b_id = request.getParameter("b_id");
-            int bid = Integer.parseInt(b_id);
+            
+            int b_id = 0;
             String ticket = request.getParameter("nop");
             int nop = Integer.parseInt(ticket);
             String from = request.getParameter("from");
             String to = request.getParameter("to");
             String hotel = request.getParameter("hotel");
             String transport = request.getParameter("Transport");
-           String guide = request.getParameter("guide");
-           String startdate= request.getParameter("startdate");
+            String guide = request.getParameter("guide");
+            String startdate= request.getParameter("startdate");
             String enddate= request.getParameter("enddate");
-            
             String email=request.getParameter("email");
-           
+                
+            int syear,eyear,smonth,emonth,sday,eday;
+
+            
+            syear=Integer.parseInt(startdate.substring(0,4));
+            smonth=Integer.parseInt(startdate.substring(5,7));
+            sday=Integer.parseInt(startdate.substring(8,10));
+            
+            eyear=Integer.parseInt(enddate.substring(0,4));
+            emonth=Integer.parseInt(enddate.substring(5,7));
+            eday=Integer.parseInt(enddate.substring(8,10));
+            
+            Calendar cal = Calendar. getInstance();
+            java.util.Date date=cal. getTime();
+            
+            int cyear,cmonth,cday,c=0;
+            cyear=cal.get(Calendar.YEAR);
+            cmonth=cal.get(Calendar.MONTH);
+            cday=cal.get(Calendar.DAY_OF_MONTH);
+            
+            if(!(syear>=cyear && smonth>=cmonth && sday>=cday))
+                 out.println("<html><body><script>alert('You have selected an invalid date (You have selected the starting date as a past date)');window.location.assign('booking.html');</script></body></html>");
+            else  if(!(eyear>=cyear && emonth>=cmonth && eday>=cday))
+                 out.println("<html><body><script>alert('You have selected an invalid date (You have selected the ending date as a past date)');window.location.assign('booking.html');</script></body></html>");
+                
+            if((eyear-syear)!=0)
+            out.println("<html><body><script>alert('Trip cannot be booked for over a year ');window.location.assign('booking.html');</script></body></html>");
+            else if((emonth-smonth)!=0 )
+            out.println("<html><body><script>alert('Trip cannot be booked for over a month');window.location.assign('booking.html');</script></body></html>");
+            
+                  
+            if(!(nop<=20&&nop>0))
+            {
+                  out.println("<html><body><script>alert('No of persons should be between 0 and 20 ');window.location.assign('booking.html');</script></body></html>");
+            }
+            else{
+                
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -59,7 +97,7 @@ public class book extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
                 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
                 
-                PreparedStatement ps   =  con.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?)");
+                PreparedStatement ps   =  con.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
                 
                //out.println("<html><head></head><body onload=\"alert('Your booking is done!')\"></body></html>");
               // out.println("<script type='text/javascript'>alert('Your booking is done');window.location('booking.html');</script>");
@@ -73,24 +111,26 @@ public class book extends HttpServlet {
                 ps.setString(6,transport);
                 ps.setInt(7,nop);
                 ps.setInt(8, uid);
-                ps.setInt(9, bid);
+                ps.setInt(9, b_id);
                 ps.setString(10,email);
-                 ps.setString(11,guide);
-                
+                ps.setString(11,guide);
+                ps.setString(12, "-");
+                ps.setString(13, "0");
+                b_id++;
                 ps.executeUpdate();
                 con.close();
                 out.println("<html><body><script>alert('your booking is done');window.location.assign('booking.html');</script></body></html>");
                 
                 
                 
-                
+                 
                 
             }
             catch(Exception e) 
             {
                 out.println("Exception : "+e);
             }
-            
+            }
             
             
             

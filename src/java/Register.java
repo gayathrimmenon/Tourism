@@ -35,8 +35,6 @@ public class Register extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
             /* TODO output your page here. You may use following sample code. */
-            String u_id=request.getParameter("u_id");
-            int uid = Integer.parseInt(u_id);
             String name=request.getParameter("firstname");
             String age=request.getParameter("age");
             int Age = Integer.parseInt(age);
@@ -46,7 +44,9 @@ public class Register extends HttpServlet {
             String Contact=request.getParameter("contact");
             String Loginid=request.getParameter("id");
             String Password=request.getParameter("password");
-           
+           int uid=0;
+            
+           PreparedStatement ps=null;
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -56,10 +56,15 @@ public class Register extends HttpServlet {
             out.println("<body>");
              try
             {
+                 
+                out.println("hii");
                 Class.forName("com.mysql.jdbc.Driver");
-                 java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+                  
+                 java.sql.Connection con=(java.sql.Connection)DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+              
+                ps = con.prepareStatement("insert into user_login values(?,?,?,?,?,?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
                
-                PreparedStatement ps = con.prepareStatement("insert into user_login values(?,?,?,?,?,?,?,?,?)");
+                    
                 out.println(" <style>\n" +
 "            \n" +
 "* {\n" +
@@ -128,7 +133,7 @@ public class Register extends HttpServlet {
 "                padding: 10px;\n" +
 "            }\n" +
                          "a "+
-                                 "            {\n" +
+                                 "   {\n" +
   
   "width: 20%;"+
   "text-align: center;"+
@@ -164,6 +169,11 @@ public class Register extends HttpServlet {
 "                    </div>\n" +
 "        </div>"
                 );
+                
+                  
+                  
+                       
+                    
                 ps.setInt(1,uid);
                 ps.setString(2,name);
                 ps.setInt(3,Age);
@@ -175,8 +185,12 @@ public class Register extends HttpServlet {
                 ps.setString(9,Password);
                 
                  ps.executeUpdate();
+                  uid++;
+              
                 con.close();
             }
+            
+             
              catch(Exception e)
              {
                  out.println(e);

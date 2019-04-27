@@ -6,7 +6,6 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author KHSCI5MCA16122
  */
-public class userlogin_table extends HttpServlet {
+public class guideinfoservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,9 +37,9 @@ public class userlogin_table extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             ServletContext application = getServletConfig().getServletContext();
-             String bt1 = request.getParameter("Login");
-            String uname = request.getParameter("id");
-            String pass = request.getParameter("password");
+             String bt1 = request.getParameter("go");
+            String uname = request.getParameter("g_id");
+           
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -48,37 +47,35 @@ public class userlogin_table extends HttpServlet {
             out.println("<title>Servlet userlogin_table</title>");            
             out.println("</head>");
             out.println("<body>");
-           if(bt1.equals("Login"))
+           if(bt1.equals("go"))
             {
                 try
                 {
                     Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
-                    PreparedStatement ps = con.prepareStatement("select* from user_login");
+                    java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
+                    PreparedStatement ps = con.prepareStatement("select* from guide");
                     ResultSet rs = ps.executeQuery();
                     int count =0;
                     while(rs.next())
                     {
-                        if(uname.equals(rs.getString(8)) && pass.equals(rs.getString(9)))
+                        if(uname.equals(rs.getString(1)))
                         {
-                            String username =rs.getString(8);
-                            String userid=rs.getString(1);
+                            String username =rs.getString(1);
                             application.setAttribute("username",username);
-                            application.setAttribute("userid", userid);
-                            RequestDispatcher rd = request.getRequestDispatcher("home2.jsp");
-                             String htmlResponse = "<html>";
-                                htmlResponse += "<h2>Your username is: " + uname + "<br/>";       
+                            RequestDispatcher rd = request.getRequestDispatcher("guide.jsp");
+                             String htmlRespone = "<html>";
+                                htmlRespone += "<h2>Your username is: " + uname + "<br/>";       
    
-                                 htmlResponse += "</html>";  
+                                 htmlRespone += "</html>";  
                            rd.forward(request, response);
-                            //response.sendRedirect("welcomehomepage.html");"
+                            //response.sendRedirect("welcomehomepage.html");
                             count++;
                         }   
                         
                     }
                         if(count == 0)
                         {
-                             out.println("<html><body><script>alert('wrong id or password');window.location.assign('user_login.html');</script></body></html>");
+                            out.println("<html><head></head><body onload=\"alert('Wrong Username or Password')\"></body></html>");
                             
                         }
                         con.close();

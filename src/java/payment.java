@@ -70,7 +70,7 @@ public class payment extends HttpServlet {
              //int total_amt = Integer.parseInt(total);
              Date today = new Date(); 
              Calendar cal = Calendar.getInstance();
-              cal.setTime(today); 
+             cal.setTime(today); 
              int dayOfYear = cal.get(Calendar.DAY_OF_YEAR);
             
             
@@ -95,7 +95,7 @@ public class payment extends HttpServlet {
                
                
                 ps.setString(1,fullname);
-              ps.setString(2,email);
+                ps.setString(2,email);
                 ps.setString(3,Address);
                 ps.setString(4,city);
                 ps.setString(5,state);

@@ -64,9 +64,10 @@ public class editinfo extends HttpServlet {
                 ps.setString(7,Loginid);
               
                  ps.setString(8,userid);
+              
                  ps.executeUpdate();
                 con.close();
-            
+            out.println("<html><body><script>alert('Edited');window.location.assign('account.jsp');</script></body></html>");
             }
               catch(Exception e)
               {

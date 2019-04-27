@@ -245,7 +245,7 @@ h1 {
   position: absolute;
   width: 280px;
   float: left;
-  left:44%;
+  left:4%;
   overflow: hidden;
 }
 
@@ -285,7 +285,7 @@ h1 {
 .form-container2 .btn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
+  padding: 13px 15px;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -387,7 +387,11 @@ p{
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
-
+      <button  class='open-button'  onclick='openForm()' style='left:20%;'>Edit Info</button>
+      
+      <form action='paymentlogin.html'><button  class='open-button' style='left:40%'>Payment Details</button></form>
+      <form action='guidedetails.html'><button  class='open-button' style='left:60%;'>Get Guide Details</button></form>
+       <form action='carbookeddetails.html'><button  class='open-button' style='left:60%;'>Car Booked Details</button></form>
 <script>
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -399,12 +403,12 @@ function closeForm() {
 </script>
     <%
   
-     String uid = request.getParameter("id");        
-    String password = request.getParameter("password");
-    String name="",age="",address="",country="",emailid="",contact="",loginid="",ticket="",from="",to="",hotel="",transport="",guide="",startdate="",enddate="",userid="",email="",bookingid="";
+     String uid = request.getParameter("u_id");        
+   
+    String name="",age="",address="",country="",emailid="",contact="",loginid="",ticket="",from="",to="",hotel="",transport="",guide="",startdate="",enddate="",userid="",email="",bookingid="",g_id="";
 
-    session.setAttribute("id",uid);
-    session.setAttribute("password", password);
+    session.setAttribute("u_id",uid);
+    
     
     
     %>
@@ -413,11 +417,13 @@ function closeForm() {
    {
         Class.forName("com.mysql.jdbc.Driver");
         java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+        
         PreparedStatement ps = con.prepareStatement("select * from user_login  inner join booking on user_login.u_id=booking.u_id where user_login.u_id =? ");
-            
+           out.println("hii");
           ps.setString(1,uid);
- 
+          
           ResultSet rs = ps.executeQuery();
+          
           while(rs.next())
           {
                     /* name=rs.getString(2);
@@ -438,6 +444,7 @@ function closeForm() {
                     guide=rs.getString(20);*/
                     
                     name=rs.getString(2);
+                     
                      age=rs.getString(3);
                     address=rs.getString(4);
                     country=rs.getString(5);
@@ -452,24 +459,25 @@ function closeForm() {
                     transport=rs.getString(15);
                     ticket=rs.getString(16);
                     bookingid=rs.getString(18);
-                    guide=rs.getString(20);
+                    guide=rs.getString(21);
+                     g_id=rs.getString(22);
                 
               
               
           } 
-           out.println("<br><center><h1 style='font-family:Mongolian Baiti;color: #99ff99;'><u><mark>Your Profile:</mark></u> </h1><center>");
-           out.println("<center><h3 style='font-family:monotype;color:white;size:33px'><p> NAME : " +name+ "<br>"+
+           out.println("<br><h1 style='font-family:Mongolian Baiti;color: #99ff99;'><u><mark>Your Profile:</mark></u> </h1>");
+           out.println("<h3 style='font-family:monotype;color:white;size:33px'><p> NAME : " +name+ "<br>"+
                         "AGE :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+age+     "<br>"+
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADDRESS : " +     address+     "<br>"+
+                        " ADDRESS : " +     address+     "<br>"+
                         "COUNTRY :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+country+     "<br>"+
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EMAIL :&nbsp; &nbsp;&nbsp;&nbsp;"                +      emailid+    "<br>"+
-                        "&nbsp;&nbsp;&nbsp;CONTACT : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +contact+     "<br>"+
+                        "EMAIL :&nbsp; &nbsp;&nbsp;&nbsp;"                +      emailid+    "<br>"+
+                        "CONTACT : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +contact+     "<br>"+
                         "LOGIN_ID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "   +loginid+     "<br>"+
                        
                        "<p>"+"</h3><center>");
-           out.println("<center> <button  class='open-button' onclick='openForm()'>Edit Info</button></center>");
+          
            out.println("<br><br>");
-            out.println("<br><center><h1 style='font-family:Mongolian Baiti;color:#088A85;size:30px'><u>Your Booking Details </u></h1><center>");
+            out.println("<br><h1 style='font-family:Mongolian Baiti;color:#088A85;size:30px'><u>Your Booking Details </u></h1>");
             out.println("<table id='customers' border=1 width=20% height=60% align=center>"
                         +"<th> From</th>"
                         +"<th>To </th>"
@@ -483,8 +491,9 @@ function closeForm() {
 
                         +"<th>Booking Id </th>"
                          
-                        +"<th>Guide </th>"
-
+                        +"<th>Guide_available? </th>"
+                        +"<th>Guide deatails </th>"
+                        
 
                         +"</tr>");
             out.println("<tr style=color:#ff3399;size=30px>"
@@ -499,7 +508,9 @@ function closeForm() {
                         +"<td>" + bookingid +"</td>"
                         
                         +"<td>" + guide +"</td>"
+                         +"<td>" + g_id +"</td>"
                         + "</tr>");
+            
         }
  catch(Exception e)
 {

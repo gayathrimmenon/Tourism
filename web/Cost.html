@@ -257,30 +257,34 @@ and open the template in the editor.
         
       </div>
       
-       <form>
+       <form action="carbook">
       <div class="bg-tx" >
      <br>
-     <h4 style="color:white;font-size:20px;font-family:comic sans ms;">&nbsp;&nbsp;Select Your Trip &nbsp;&nbsp; : &nbsp;&nbsp; <select id="choice" >
+     <h4 style="color:white;font-size:20px;font-family:comic sans ms;">&nbsp;&nbsp;Select Your Trip &nbsp;&nbsp; : &nbsp;&nbsp; <select id="choice" name="dest">
       <option value=""></option>
-      <option value="1">Mumbai to Pune(Rs.2000)</option>
-      <option value="2">Mumabai to Kerala(Rs.6000)</option>
-      <option value="3">Kerala to Chennai(Rs.4000)</option>
-      <option value="4">Bangalore to Kerala(Rs.4500)</option>
-      <option value="5">Mysore to Bangalore(Rs.3500)/option>
-      <option value="6">Goa to Mumbai(Rs.5000)</option>
-      <option value="7">Bangalore to chennai(Rs.8000)</option>
+      <option value="Mum_Pun">Mumbai to Pune(Rs.2000)</option>
+      <option value="Mum_ker">Mumbai to Kerala(Rs.6000)</option>
+      <option value="ker_chen">Kerala to Chennai(Rs.4000)</option>
+      <option value="bang_ker">Bangalore to Kerala(Rs.4500)</option>
+      <option value="mys_bang">Mysore to Bangalore(Rs.3500)</option>
+      <option value="goa_mum">Goa to Mumbai(Rs.5000)</option>
+      <option value="bang_chen">Bangalore to chennai(Rs.8000)</option>
     </select></h4>
-        <h4 style="color:white;font-size:20px;font-family:comic sans ms;">Car Type&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <select id="car">
+        <h4 style="color:white;font-size:20px;font-family:comic sans ms;">Car Type&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <select id="car" name="type">
       <option value=""></option>
       <option value="car1">A/c(Rs.2000)</option>
       <option value="car2">Deluxe(Rs.3000)</option>
       <option value="car3">Non-A/c(Rs.1500)</option>
     </select></h4>
-    
-  
+     <h4 style="color:white;font-size:20px;font-family:comic sans ms;">Date&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="date" name="date"><br><br>
+         <h4 style="color:white;font-size:20px;font-family:comic sans ms;">User-id&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="text" name="u_id"><br><br>
+         
     <input id="est" type="button" value="Estimate" onclick="calculator()" />
     <input id="reset" type="reset" value="Reset" />
-    <input type="text" id="txtresult" name="TextBox3">
+    <input type="text" id="txtresult" name="TextBox3"><br><br>
+    <button name="book">BOOK</button>
   </form>
       <br><br>
       </div>
@@ -308,19 +312,19 @@ function calculator() {
   
   switch(calc)
   {
-            case"1" : result = mtp; 
+            case"Mum_Pun" : result = mtp; 
         break;
-            case"2" : result = mtk; 
+            case"Mum_ker" : result = mtk; 
         break;
-            case"3" : result = ktc; 
+            case"ker_chen" : result = ktc; 
         break;
-         case"4" : result = btk; 
+         case"bang_ker" : result = btk; 
         break;
-         case"5" : result = mtb; 
+         case"mys_bang" : result = mtb; 
         break;
-         case"6" : result = gtm; 
+         case"goa_mum" : result = gtm; 
         break;
-         case"7" : result = btc; 
+         case"bang_chen" : result = btc; 
         break;
 }
 document.getElementById("txtresult").value=result;

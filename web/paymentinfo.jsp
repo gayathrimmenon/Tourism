@@ -1,4 +1,5 @@
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
@@ -335,13 +336,10 @@ p{
 <div class="navbar">
      <a href="#default" class="logo">GnT Travels</a>
      <h3> <mark>WELCOME ${username}</mark></h3>
-     <h3> <mark>YOUR USER ID IS: ${userid}</mark></h3>
     <div class="navbar-right">
-        <a href="comp.html"> <i class='fas fa-home' style='font-size:38px;'></i></a>&nbsp;&nbsp;&nbsp;
-  <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
-  <a href="Cost.html">Cost Estimation</a>
-  <a href="accountinfo.html">My Account</a>
-  <a href="payment.html">Payment</a>
+        <a href="home2.jsp">Home</a> &nbsp;&nbsp;&nbsp;
+        <a href="maps.html">Resource Locator</a>&nbsp;&nbsp;&nbsp;
+        <a href="Cost.html">Cost Estimation</a>
     <div class="dropdown">
     <button class="dropbtn">
       <i class='fas fa-gift' style='font-size:34px'></i>Packages 
@@ -355,6 +353,123 @@ p{
     <a href="LogoutServlet1">Logout</a>
   </div>
 </div>
+   
+   
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+    <%
+  
+     String uid = request.getParameter("u_id");        
     
+   
+
+    session.setAttribute("u_id",uid);
+  
+    
+    
+    %>
+ <%  
+     try
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
+                PreparedStatement stmt=con.prepareStatement("select * from payment");
+                ResultSet rs=stmt.executeQuery(); 
+               
+                       
+            out.println("<center>");
+           out.println("<h1 style='font-family:'arial';font-color:'maroon' '><mark>Payment Details</mark></h1>");
+            out.println("<table border=1 width=10% height=50% align=center>"
+                    + "<tr><th>User_Id </th>"
+                     + "<th>Booking_Id </th>"
+                    + "<th>FullName </th>"
+                    +"<th>EmailId </th>"
+                    
+                    +"<th>Address </th>"
+                    +"<th>City </th>"
+                    +"<th>State </th>"
+                    +"<th>Package selected </th>"
+                    +"<th>travel mode </th>"
+                    +"<th> No of persons</th>"
+                    +"<th> flight from</th>"
+                     +"<th> flight to</th>"
+                    +"<th>Train From </th>"
+                    +"<th>Train To </th>"
+                    +"<th> Name on Card</th>"
+                    +"<th>Card Number </th>"
+                    +"<th>Expiry Month</th>"
+                    +"<th>Expiry Year</th>"
+                    +"<th>CVV</th>"
+                    +"<th>Total Amt </th>"
+                    +"<th>Payed?</th>"
+                  
+                    +"</tr>");
+            String u_id,b_id,name,address,city,state,emailid,pack,travelmode,nop,flight_from,flight_to,train_from,train_to,cardname,cardno,cvv,expmonth,expyear,total,payed;
+            while(rs.next())
+                {
+                    u_id=rs.getString(6);
+                    b_id=rs.getString(7);
+                    name=rs.getString(1);
+                     emailid=rs.getString(2);
+                    address=rs.getString(3);
+                    city=rs.getString(4);
+                    state=rs.getString(5);
+                    pack=rs.getString(8);
+                    travelmode=rs.getString(9);
+                    nop=rs.getString(10);
+                   flight_from=rs.getString(11);
+                     flight_to=rs.getString(12);
+                     train_from=rs.getString(13);
+                     train_to=rs.getString(14);
+                     cardname=rs.getString(15);
+                     cardno=rs.getString(16);
+                     cvv=rs.getString(17);
+                     expmonth=rs.getString(18);
+                    expyear=rs.getString(19);
+                     total=rs.getString(20);
+                    payed=rs.getString(21);
+                                  
+                       
+              
+                    out.println("<tr style=color:crimson red>"
+                        +"<td>" + u_id +"</td>"
+                        +"<td>" + b_id +"</td>"
+                        +"<td>" + name +"</td>"
+                       +"<td>" + emailid +"</td>"
+                        + "<td>" + address + "</td>"
+                        +"<td>" + city +"</td>"
+                         +"<td>" + state +"</td>"
+                        +"<td>" +pack  +"</td>"
+                        +"<td>" + travelmode +"</td>"
+                         +"<td>" + nop +"</td>"       
+                        +"<td>" + flight_from +"</td>"
+                       +"<td>" + flight_to +"</td>"
+                        +"<td>" + train_from +"</td>"
+                      +"<td>" + train_to +"</td>"  
+                        +"<td>" + cardname +"</td>"
+                       +"<td>" + cardno +"</td>"
+                       +"<td>" + cvv +"</td>"
+                        +"<td>" + expmonth +"</td>"
+                     +"<td>" + expyear +"</td>"
+                        +"<td>" + total +"</td>" 
+                          +"<td>" + payed +"</td>"
+                        + "</tr>");
+                    
+                }
+            }
+            catch(Exception e)
+            {
+                out.println("Exception : "+e);
+            }
+%>
     </body>
 </html>
