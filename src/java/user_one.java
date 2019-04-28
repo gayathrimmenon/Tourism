@@ -63,7 +63,7 @@ public class user_one extends HttpServlet {
                     +"<th>EmailId </th>"
                     +"<th>Contact </th>"
                     +"<th>LoginId </th>"
-                    +"<th>Password </th>"
+                  
                   
                     +"</tr>");
             String u_id,name,age,address,country,emailid,contact,loginid,password;
@@ -77,7 +77,7 @@ public class user_one extends HttpServlet {
                     emailid=rs.getString(6);
                     contact=rs.getString(7);
                     loginid=rs.getString(8);
-                    password=rs.getString(9);
+                 
                    
                
                     out.println("<tr style=color:crimson red>"
@@ -89,7 +89,7 @@ public class user_one extends HttpServlet {
                         +"<td>" + emailid +"</td>"
                         +"<td>" + contact +"</td>"
                         +"<td>" + loginid +"</td>"
-                        +"<td>" + password +"</td>"
+                      
                        
                         + "</tr>");
                     

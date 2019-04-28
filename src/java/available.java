@@ -75,7 +75,7 @@ public class available extends HttpServlet {
                 
                 ps.executeUpdate();
                 con.close();
-                out.println("<html><body><script>alert('your booking is done');window.location.assign('homepage.html');</script></body></html>");
+                out.println("<html><body><script>alert('Thank You');window.location.assign('homepage.html');</script></body></html>");
                 
                 
                 

@@ -42,6 +42,7 @@ public class booking_one_guide extends HttpServlet {
             out.println("<title>Servlet booking_one</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<form action='guideavail.html'><button name='avail'>Availalable</button></form>");
              try
             {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -56,7 +57,7 @@ public class booking_one_guide extends HttpServlet {
             out.println("<table border=1 width=10% height=50% align=center>"
                     
                     
-                    +"<tr><th> From</th>"
+                               +"<tr><th> From</th>"
                     
                     +"<th>To </th>"
                     +"<th>Start Date </th>"
@@ -65,31 +66,34 @@ public class booking_one_guide extends HttpServlet {
                    
                     +"<th>Transport </th>"
                     
-                    +"<th>b_id </th>"
                      + "<th>No Of People </th>"
+                    +"<th>User Id </th>"
+                    +"<th>Booking Id </th>"
                      +"<th>Email </th>"
-                    
                      +"<th>Guide </th>"
+                     +"<th>Guide_Taken </th>"
                     
                    
                   
                     +"</tr>");
-            String ticket,from,to,hotel,transport,guide,startdate,enddate,b_id,email;
+            String ticket,from,to,hotel,transport,guide,startdate,enddate,userid,email,bookingid,guide_taken;
             while(rs.next())
                 {
                     
-                    b_id=rs.getString(9);
+                    
                     from=rs.getString(1);
                     to=rs.getString(2);
                     startdate=rs.getString(3);
                     enddate=rs.getString(4);
                     hotel=rs.getString(5);
                     transport=rs.getString(6);
-                    guide=rs.getString(11);
-                    ticket=rs.getString(7);
-                    email=rs.getString(10);
-                    
                    
+                    ticket=rs.getString(7);
+                    userid=rs.getString(8);
+                    bookingid=rs.getString(9);
+                    email=rs.getString(10);
+                     guide=rs.getString(11);
+                   guide_taken=rs.getString(12);
                
                     out.println("<tr style=color:crimson red>"
                         
@@ -99,16 +103,19 @@ public class booking_one_guide extends HttpServlet {
                         +"<td>" + enddate +"</td>"
                         +"<td>" + hotel +"</td>"
                         +"<td>" + transport +"</td>"
-                        +"<td>" + b_id +"</td>"
-                        
                         +"<td>" + ticket +"</td>"
+                        +"<td>" + userid +"</td>"
+                        +"<td>" + bookingid +"</td>"
                         +"<td>" + email +"</td>"
-                         +"<td>" + guide +"</td>"
-                                
+                        +"<td>" + guide +"</td>"
+                        +"<td>" + guide_taken +"</td>"        
                         
                        
                         + "</tr>");
                     
+                
+                    
+                
                 }
             }
             catch(Exception e)

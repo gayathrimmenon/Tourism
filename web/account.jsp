@@ -391,7 +391,7 @@ p{
       
       <form action='paymentlogin.html'><button  class='open-button' style='left:40%'>Payment Details</button></form>
       <form action='guidedetails.html'><button  class='open-button' style='left:60%;'>Get Guide Details</button></form>
-       <form action='carbookeddetails.html'><button  class='open-button' style='left:60%;'>Car Booked Details</button></form>
+       <form action='carbookeddetails.html'><button  class='open-button' style='left:80%;'>Car Booked Details</button></form>
 <script>
 function openForm() {
   document.getElementById("myForm").style.display = "block";

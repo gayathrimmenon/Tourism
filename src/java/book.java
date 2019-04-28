@@ -69,34 +69,46 @@ public class book extends HttpServlet {
             cmonth=cal.get(Calendar.MONTH);
             cday=cal.get(Calendar.DAY_OF_MONTH);
             
-            if(!(syear>=cyear && smonth>=cmonth && sday>=cday))
+            /*if(!(syear>=cyear && smonth>=cmonth && sday>=cday))
                  out.println("<html><body><script>alert('You have selected an invalid date (You have selected the starting date as a past date)');window.location.assign('booking.html');</script></body></html>");
             else  if(!(eyear>=cyear && emonth>=cmonth && eday>=cday))
                  out.println("<html><body><script>alert('You have selected an invalid date (You have selected the ending date as a past date)');window.location.assign('booking.html');</script></body></html>");
-                
-            if((eyear-syear)!=0)
-            out.println("<html><body><script>alert('Trip cannot be booked for over a year ');window.location.assign('booking.html');</script></body></html>");
-            else if((emonth-smonth)!=0 )
-            out.println("<html><body><script>alert('Trip cannot be booked for over a month');window.location.assign('booking.html');</script></body></html>");
-            
-                  
-            if(!(nop<=20&&nop>0))
+               */ 
+            int count = 0;
+            if((eyear-syear)>0)
             {
-                  out.println("<html><body><script>alert('No of persons should be between 0 and 20 ');window.location.assign('booking.html');</script></body></html>");
+                out.println("<html><body><script>alert('Trip cannot be booked for over a year ');</script></body></html>");
+                count ++ ;
             }
-            else{
-                
+                if((emonth-smonth)>1 )
+                {
+                  out.println("<html><body><script>alert('Trip cannot be booked for over a month');</script></body></html>");
+                  count++;
+                }
+                  if(!(nop<=20&&nop>0))
+                    {
+                        out.println("<html><body><script>alert('No of persons should be between 0 and 20 ');</script></body></html>");
+                        count++;
+                    }
+                if(count > 0)
+                {
+                   out.println("<script>window.location.assign('booking.html');</script>") ;
+                }
+            
+            
+              else{   
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet book</title>");            
             out.println("</head>");
             out.println("<body>");
+           
             try
               {
                 Class.forName("com.mysql.jdbc.Driver");
                 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
-                
+                out.println("hii");
                 PreparedStatement ps   =  con.prepareStatement("insert into booking values(?,?,?,?,?,?,?,?,?,?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
                 
                //out.println("<html><head></head><body onload=\"alert('Your booking is done!')\"></body></html>");

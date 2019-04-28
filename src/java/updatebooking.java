@@ -59,6 +59,7 @@ public class updatebooking extends HttpServlet {
                 
                  ps.executeUpdate();
                 con.close();
+                 out.println("<html><body><script>alert('Booking Details updated');window.location.assign('homepage.html');</script></body></html>");
             
             }
               catch(Exception e)

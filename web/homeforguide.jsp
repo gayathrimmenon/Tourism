@@ -49,12 +49,13 @@
     <body class="color">
        
         <h3>Welcome ${username}</h3>
+        <h3>Your Guide_id is: ${guideid}</h3>
          <a class="active" href="LogoutServlet1" target="_parent"><i class="fa fa-home"></i></a> 
         <form action="user_one" method="POST">
             <input type="submit" class="button button1" value="User Details" formtarget="f2" vspace="10">
         </form>
         
-        <form action="booking_one" method="POST">
+        <form action="booking_one_guide" method="POST">
             <input type="submit" class="button button1" value="BOOKED tickets" formtarget="f2" vspace="10"> 
         </form>
         

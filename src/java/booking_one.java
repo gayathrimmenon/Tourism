@@ -41,7 +41,7 @@ public class booking_one extends HttpServlet {
             out.println("<title>Servlet booking_one</title>");            
             out.println("</head>");
             out.println("<body>");
-                out.println("<form action='guideavail.html'><button name='avail'>Availalable</button></form>");
+                
              try
             {
                 Class.forName("com.mysql.jdbc.Driver");

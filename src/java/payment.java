@@ -121,7 +121,7 @@ public class payment extends HttpServlet {
                 out.println(ps.toString());
                 con.close();
                 
-                out.println("<html><body><script>alert('Your payment is done');window.location.assign('home2.jsp');</script></body></html>");
+                out.println("<html><body><script>alert('Your payment is done.<br>Thank You!');window.location.assign('home2.jsp');</script></body></html>");
              
             }
             catch(Exception e) 

@@ -221,12 +221,69 @@ and open the template in the editor.
                 margin:none auto;
                 padding: 10px;
             }
+            #message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
 
-      </style>
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  right:50%;
+}
+
+/* Green */
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+ </style>
     </head>
     <body class="bg" background="sea.jpg">
-        <div class="container2" >  <a href="guideloginpage.html">LOGIN</a> 
+        <div class="container2" >        
+
          <form method="POST" name="Registration"  onsubmit="return(validate())" action="Add_Guide" >
+               <a href="guideloginpage.html" class="btn success">LOGIN</a>
          <br><br><br><br><br><br><br><br>
             <div class="content"><br><br><br><br>
                 <img src="bg3.jpg">
@@ -234,9 +291,9 @@ and open the template in the editor.
                         <h1 style="font-family: monospace"><u>GnT Travels</u></h1>
                       
 
-                        <h4>Register:</h4>
+                        <h3>Register:</h3>
                         <i class="fa fa-user"></i> First Name:   <input type="text" name="firstname">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Age:   <input type="text" name="age"><br><br>
-                        g_id:   <input type="text" name="g_id">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;                 
+                                        
                         <i class="fa fa-address-card-o"></i>  Address: &nbsp;&nbsp;&nbsp;   <textarea rows="4" cols="40" name="address"></textarea> <br><br>
                        
                         Country  &nbsp;&nbsp;&nbsp;        : <input type="text" name="country"> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; EMAIL ID  :   <input type="text" size="30" name="email"><br><br>
@@ -249,12 +306,7 @@ and open the template in the editor.
                   
                 <input type="SUBMIT" class="button" value="Add" name="check"  >
                 <input type="reset" class="button" value="clear" name="clear"  >
-               
-              
-          </div>
-                    </div><br><br><br>
-             </form><br><br><br>
-             <div id="message">
+                <div id="message">
             <h3>Password must contain the following:</h3>
             <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
             <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
@@ -262,12 +314,15 @@ and open the template in the editor.
             <p id="length" class="invalid">Minimum <b>8 characters</b></p>
         </div>
         </div>
+              
+          </div>
+         </form>
+                    </div><br><br><br>
+            <br><br><br>
+             
+            
         <hr>
         
-          
-        
-        
-
-
+   
     </body>
 </html>

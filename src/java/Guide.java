@@ -35,7 +35,7 @@ public class Guide extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
              String name=request.getParameter("firstname");
-             String g_id=request.getParameter("g_id");
+            int g_id=0;
             String age=request.getParameter("age");
             String address=request.getParameter("address");
             String country=request.getParameter("country");
@@ -58,7 +58,7 @@ public class Guide extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tourism","root","");
                
-                PreparedStatement ps = con.prepareStatement("insert into guide values(?,?,?,?,?,?,?,?,?,?,?)");
+                PreparedStatement ps = con.prepareStatement("insert into guide values(?,?,?,?,?,?,?,?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
                 out.println(" <style>\n" +
 "            \n" +
 "* {\n" +
@@ -150,11 +150,12 @@ public class Guide extends HttpServlet {
                         + "</center><br>"
                         + "<h1 style=\"font-family: monospace\">Your account has been created!!</h1>\n" +
                      "<br><br><a href= 'comp.html'>Home</a>"+
+                         "<br><br><a href= 'guideloginpage.html'>Login</a>"+
 "                      </div>\n" +
 "                    </div>\n" +
 "        </div>");
  
-                ps.setString(1, g_id);
+                ps.setInt(1, g_id);
                 ps.setString(2,name);
                 ps.setString(3,age);
                 ps.setString(4,address);
@@ -165,7 +166,7 @@ public class Guide extends HttpServlet {
                 ps.setString(9,Contact);
                 ps.setString(10,Loginid);
                 ps.setString(11,Password);
-                
+                g_id++;
                  ps.executeUpdate();
                 con.close();
             }

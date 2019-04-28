@@ -59,10 +59,13 @@ public class guidelogin_table extends HttpServlet {
                     int count =0;
                     while(rs.next())
                     {
-                        if(gname.equals(rs.getString(1)) && pass.equals(rs.getString(11)))
+                        if(gname.equals(rs.getString(10)) && pass.equals(rs.getString(11)))
                         {
-                            String username =rs.getString(1);
-                           application.setAttribute("username",username);
+                            String username =rs.getString(10);
+                             String guideid=rs.getString(1);
+                            application.setAttribute("username",username);
+                            application.setAttribute("guideid", guideid);
+                          
                             RequestDispatcher rd = request.getRequestDispatcher("framepageforguide.html");
                            rd.forward(request, response);
                             //response.sendRedirect("welcomehomepage.html");
@@ -72,7 +75,7 @@ public class guidelogin_table extends HttpServlet {
                     }
                         if(count == 0)
                         {
-                            out.println("<html><head></head><body onload=\"alert('Wrong Username or Password')\"></body></html>");
+                            out.println("<html><body><script>alert('wrong id or password');window.location.assign('guideloginpage.html');</script></body></html>");
                         }
                         con.close();
                     

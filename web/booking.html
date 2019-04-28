@@ -393,6 +393,13 @@ and open the template in the editor.
   .navbar li a, .navbar .navbar-brand 
   {
     background-color: rgba(0,0,0, 0.4); 
+    float: left;
+  top:10%;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a 
   {
@@ -411,8 +418,18 @@ and open the template in the editor.
     margin-bottom: 20px;
     color: #f4511e;
   }
-  
-  
+ 
+
+.navbar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+}
+.navbar-right {
+  float: right;
+  font-family: monospace;
+  font-size: 25px;
+}
 
   .mySlides 
   {
@@ -684,6 +701,60 @@ h1 {
     margin-bottom: 20px;
     color: #f4511e;
   }
+  .dropdown {
+  float: right;
+  font-size: 20%;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.dropdown .dropbtn {
+ 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 20px;
+}
+
+.dropdown-content a:hover {
+  background-color:  #ff471a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
   
   </style>
 </head>
@@ -695,19 +766,29 @@ h1 {
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#myPage">GnT Travels</a>
+     
     </div>
-      
+      &nbsp;&nbsp;&nbsp;
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="home2.jsp">HOME</a></li>
-        <li><a href="maps.html">Resource Locator</a></li>&nbsp;&nbsp;&nbsp;
-        <li><a href="Cost.html">Cost Estimation</a></li>
-        <li><a href="accountinfo.html">My Account</a></li>
-        <li><a href="payment.html">PAYMENT</a></li>
-        <li><a href="#contact">CONTACT</a></li>  
+          <li><a href="home2.jsp"><font color="white"><b>HOME</b></font></a></li>
+        <li><a href="maps.html"><font color="white"><b>Resource Locator</b></font></a></li>&nbsp;&nbsp;&nbsp;
+        <li><a href="Cost.html"><font color="white"><b>Cost Estimation</b></font></a></li>
+        <li><a href="accountinfo.html"><font color="white"><b>My Account</b></font></a></li>
+        <li><a href="payment.html"><font color="white"><b>PAYMENT</b></font></a></li>
+        <li><a href="#contact"><font color="white"><b>CONTACT</b></font></a></li>  
+        <div class="dropdown">
+            <button class="dropbtn">
+                <i class='fas fa-gift' style='font-size:34px'></i>
+        <div class="dropdown-content">
+            <a href="booking.html">Domestic</a>
+             <a href="inter1.html">International</a>
+     
+    </div>
     </div> 
        
         

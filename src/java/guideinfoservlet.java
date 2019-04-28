@@ -75,7 +75,7 @@ public class guideinfoservlet extends HttpServlet {
                     }
                         if(count == 0)
                         {
-                            out.println("<html><head></head><body onload=\"alert('Wrong Username or Password')\"></body></html>");
+                            out.println("<html><body><script>alert('Invalid Guide id');window.location.assign('guidedetails.html');</script></body></html>");
                             
                         }
                         con.close();

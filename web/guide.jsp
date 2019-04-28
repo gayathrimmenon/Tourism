@@ -383,10 +383,11 @@ function closeForm() {
             {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
-                PreparedStatement stmt=con.prepareStatement("select * from guide");
+                PreparedStatement stmt=con.prepareStatement("select * from guide where g_id=?");
+                 stmt.setString(1,uid);
                 ResultSet rs=stmt.executeQuery(); 
                
-                       
+                      
             out.println("<center>");
            out.println("<h1 style='font-family:'arial';font-color:'maroon' '><mark>Guide Details<MARK></h1>");
             out.println("<table border=1 width=10% height=50% align=center>"
@@ -409,15 +410,15 @@ function closeForm() {
             while(rs.next())
                 {
                     g_id=rs.getString(1);
-                    name=rs.getString(1);
-                    age=rs.getString(2);
-                    address=rs.getString(3);
-                    country=rs.getString(4);
-                    emailid=rs.getString(5);
-                    qualification=rs.getString(6);
-                    experience=rs.getString(7);
-                    contact=rs.getString(8);
-                    loginid=rs.getString(9);
+                    name=rs.getString(2);
+                    age=rs.getString(3);
+                    address=rs.getString(4);
+                    country=rs.getString(5);
+                    emailid=rs.getString(6);
+                    qualification=rs.getString(7);
+                    experience=rs.getString(8);
+                    contact=rs.getString(9);
+                    loginid=rs.getString(10);
                    
                
                     out.println("<tr style=color:crimson red>"
