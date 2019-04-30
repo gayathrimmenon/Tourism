@@ -53,7 +53,7 @@ public class update extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
                  java.sql.Connection con=(java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
                
-                PreparedStatement ps = con.prepareStatement("update user_login set name=?,age=?,address=?,country=?,Email=?,Contactno=? where Loginid=?");
+                PreparedStatement ps = con.prepareStatement("update user_login set name=?,age=?,address=?,country=?,Email=?,Contact_no=? where Loginid=?");
                 
                 ps.setString(1,name);
                 ps.setString(2,age);

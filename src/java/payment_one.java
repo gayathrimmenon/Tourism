@@ -52,7 +52,7 @@ public class payment_one extends HttpServlet {
            out.println("<h1 style='font-family:'arial';font-color:'maroon' '>Payment Details</h1>");
             out.println("<table border=1 width=10% height=50% align=center>"
                     + "<tr><th>User_Id </th>"
-                     + "<tr><th>Booking_Id </th>"
+                     + "<th>Booking_Id </th>"
                     + "<th>FullName </th>"
                     +"<th>EmailId </th>"
                     

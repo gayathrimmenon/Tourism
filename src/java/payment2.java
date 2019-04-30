@@ -115,17 +115,11 @@ public class payment2 extends HttpServlet {
                 ps.setString(18, cvv);
                 ps.setString(19,total);
                 
-                if(exp<dayOfYear)
-                {
+               
                 ps.setString(20,"yes");
                  out.println("<html><body><script>alert('Your payment is done');window.location.assign('home2.jsp');</script></body></html>");
-                }
-                else
-                {
-                    ps.setString(20,"no");
-                    out.println("<html><body><script>alert('Your payment is not done');window.location.assign('home2.jsp');</script></body></html>");
-                }
                 
+               
                 ps.executeUpdate();
                 out.println(ps.toString());
                 con.close();

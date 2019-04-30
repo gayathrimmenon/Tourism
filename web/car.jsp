@@ -383,7 +383,8 @@ function closeForm() {
             {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/tourism","root","");
-                PreparedStatement stmt=con.prepareStatement("select * from car");
+                PreparedStatement stmt=con.prepareStatement("select * from car where u_id=?");
+                stmt.setString(1,uid);
                 ResultSet rs=stmt.executeQuery(); 
                
                        
